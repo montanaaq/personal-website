@@ -1,12 +1,12 @@
-import Circles from "../../Circles";
-import ViewPage from "./ViewPage";
+import Circles from '../../Circles'
+import ViewPage from './ViewPage'
 
 const MusicPage = () => {
-    return (
-        <Circles>
-            <ViewPage />
-        </Circles>
-    );
+  return (
+    <Circles>
+      <ViewPage />
+    </Circles>
+  )
 }
 
-export default MusicPage;
+export default MusicPage

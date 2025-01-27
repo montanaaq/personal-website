@@ -34,9 +34,7 @@
   flex-direction: row;
   align-items: center;
 }
-.name {
-  margin-right: 10px;
-}
+
 .header_text a {
   color: var(--secondary);
 }
@@ -45,10 +43,11 @@
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
+  transition: 0.2s color;
+  margin-right: 10px;
 }
 .name:hover {
-  opacity: 0.8;
-  transition: 0.2s;
+  color: #74baff;
 }
 .toggle_light_mode {
   margin-top: 3px;

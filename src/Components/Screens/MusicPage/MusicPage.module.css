@@ -115,11 +115,11 @@
     padding: 20px;
   }
   .header_container h1 {
-    font-size: 30px;
+    font-size: 26px;
   }
   .header_container img {
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
   }
   .music_container {
     display: flex;

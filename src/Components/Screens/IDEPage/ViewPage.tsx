@@ -3,6 +3,7 @@ import { FC } from 'react'
 import Header from '../Homepage/Header/Header'
 import Edit from './Edit'
 import styles from './IDEPage.module.css'
+import Footer from '../Homepage/Footer/Footer'
 
 const ViewPage: FC = () => {
   const { scrollYProgress } = useScroll()
@@ -36,6 +37,7 @@ const ViewPage: FC = () => {
             alt={'extensions_ico'}
           />
         </div>
+        <Footer />
       </div>
     </>
   )

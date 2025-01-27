@@ -4,13 +4,16 @@
   max-width: calc(var(--main-width) + var(--gap) * 2);
   margin: auto;
 }
+.container {
+  margin-top: 30px;
+}
 
 .post_content
   img:not(.sneaknews_img):not(.uni_finder_website_img):not(
     .profile_website_img
   ):not(.schedulebot_img):not(.desks_duels_img) {
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   border-radius: 15px;
   margin-bottom: 50px;
   margin-top: 15px;

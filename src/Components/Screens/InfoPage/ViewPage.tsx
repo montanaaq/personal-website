@@ -20,13 +20,13 @@ const ViewPage: FC = () => {
     month: 'long',
     day: 'numeric'
   }).format(today)
-  
+
   return (
     <div>
       <motion.div className="progress-bar" style={{ scaleX }} />
       <Header />
       <div className={styles.main_post}>
-        <header style={{ margin: '10px 0px 40px 0px' }}>
+        <header style={{ margin: '20px 0px 40px 0px' }}>
           <h1 style={{ fontSize: '38px', fontWeight: 600 }}>
             Мои <span style={{ color: 'var(--secondary)' }}>проекты</span>
           </h1>
@@ -124,8 +124,8 @@ const ViewPage: FC = () => {
             </div>
           ))}
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   )
 }
