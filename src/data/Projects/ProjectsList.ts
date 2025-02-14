@@ -20,7 +20,7 @@ export const ProjectsList: IProjectsList[] = [
         "img":  "https://i.imgur.com/VBSXfjZ.png",
         "main_name": "Schedule Bot",
         "date": "сентябрь 2023",
-        "isSupport": false,
+        "isSupport": true,
         "link": "http://t.me/schedule_10t_bot"
     },
     {
