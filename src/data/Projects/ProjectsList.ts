@@ -14,6 +14,7 @@ interface IProjectsList {
 export const ProjectsList: IProjectsList[] = [
     {
         "id": 1,
+        
         "name": "Бот расписаний занятий",
         "p": "Бот, который позволяет вам просматривать расписание занятий в вашей школе",
         "url": "schedulebot",
@@ -21,7 +22,7 @@ export const ProjectsList: IProjectsList[] = [
         "main_name": "Schedule Bot",
         "date": "сентябрь 2023",
         "isSupport": true,
-        "link": "http://t.me/schedule_10t_bot"
+        "link": "http://t.me/gymn33_bot"
     },
     {
         "id": 2,
