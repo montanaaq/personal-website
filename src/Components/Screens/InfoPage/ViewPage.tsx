@@ -50,7 +50,7 @@ const ViewPage: FC = () => {
                 <a
                   href={`#${el.url}`}
                   style={{
-                    color: 'var(--text-color)',
+                    color: 'var(--lower-text-color)',
                     textDecorationThickness: '1px'
                   }}
                 >
@@ -61,10 +61,10 @@ const ViewPage: FC = () => {
           </ul>
           {ProjectsList.map(el => (
             <div className={styles.container} key={el.id}>
-              <h2 style={{ marginBottom: '20px' }} id={el.url}>
+              <h2 style={{ marginBottom: '10px' }} id={el.url}>
                 {el.main_name} ({el.date})
               </h2>
-              <p style={{ marginBottom: '10px' }}>{el.p}</p>
+              <p style={{ marginBottom: '10px', color: 'var(--lower-text-color)' }}>{el.p}</p>
               <p className={styles.status}>
                 Статус:{' '}
                 {el.isSupport ? (
@@ -74,14 +74,13 @@ const ViewPage: FC = () => {
                 )}
               </p>
               {el.link && (
-                <div>
+                <div style={{marginTop: '15px'}}>
                   <a
                     rel="noreferrer"
                     target="_blank"
                     href={el.link}
                     style={{
                       color: 'var(--text-color)',
-                      marginBottom: '10px'
                     }}
                   >
                     Ссылка
@@ -89,13 +88,13 @@ const ViewPage: FC = () => {
                 </div>
               )}
               {el.source_code ? (
-                <div>
+                <div style={{marginTop: '5px'}}>
                   <a
                     href={el.source_code}
                     target="_blank"
                     rel="noreferrer"
                     style={{
-                      color: 'var(--text-color)'
+                      color: 'var(--lower-text-color)'
                     }}
                   >
                     Source code

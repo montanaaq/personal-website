@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800;900&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 html[data-theme='light'] {
   --text-color: rgb(37, 37, 37);
   --bg-color: e8e8e8;
@@ -18,6 +18,7 @@ html {
 }
 :root {
   --text-color: rgb(225, 255, 255);
+  --lower-text-color: rgba(255, 255, 255, 0.7);
   --bg-color: rgb(37, 37, 37);
   --circles-color: rgba(255, 255, 255, 0.2);
   --secondary: #1876d2;
@@ -36,7 +37,8 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: 0.2s;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter Tight', sans-serif;
+  font-optical-sizing: auto;
   animation: animateOnLoad 0.5s linear;
 }
 
