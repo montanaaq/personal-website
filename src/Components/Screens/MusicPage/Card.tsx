@@ -1,5 +1,5 @@
-import { FC } from 'react'
 import { Button } from '@mui/material'
+import { FC } from 'react'
 import styles from './MusicPage.module.css'
 
 interface ICard {
@@ -24,8 +24,12 @@ const Card: FC<ICard> = ({ id, name, img, best, alt, link, duration }) => {
       >
         {name}
       </h2>
-      <p key={`duration_${id}`}>Длительность: <b>{duration}</b></p>
-      <p key={`best_${id}`}>Любимые: <b>{best}</b></p>
+      <p key={`duration_${id}`}>
+        Длительность: <b>{duration}</b>
+      </p>
+      <p key={`best_${id}`}>
+        Любимые: <b>{best}</b>
+      </p>
       <Button
         variant="outlined"
         size="large"

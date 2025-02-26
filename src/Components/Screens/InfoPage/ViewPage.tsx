@@ -60,7 +60,14 @@ const ViewPage: FC = () => {
             ))}
           </ul>
           {ProjectsList.map(el => (
-            <div className={styles.container} key={el.id}>
+            <motion.div
+              className={styles.container}
+              key={el.id}
+              initial={{ opacity: 0, y: 50 }} // Начальное состояние (прозрачность 0, немного смещено вниз)
+              whileInView={{ opacity: 1, y: 0 }} // Когда в области просмотра — полностью видно
+              transition={{ duration: 0.4, ease: 'easeOut' }} // Плавное появление
+              viewport={{ once: true }} // Анимация срабатывает только один раз
+            >
               <h2 style={{ marginBottom: '10px' }} id={el.url}>
                 {el.main_name} ({el.date})
               </h2>
@@ -74,7 +81,7 @@ const ViewPage: FC = () => {
                 )}
               </p>
               {el.link && (
-                <div style={{marginTop: '15px'}}>
+                <div style={{ marginTop: '15px' }}>
                   <a
                     rel="noreferrer"
                     target="_blank"
@@ -88,7 +95,7 @@ const ViewPage: FC = () => {
                 </div>
               )}
               {el.source_code ? (
-                <div style={{marginTop: '5px'}}>
+                <div style={{ marginTop: '5px' }}>
                   <a
                     href={el.source_code}
                     target="_blank"
@@ -103,7 +110,7 @@ const ViewPage: FC = () => {
               ) : (
                 ''
               )}
-              <img
+              <motion.img
                 src={el.img}
                 alt="not downloaded"
                 className={
@@ -119,8 +126,12 @@ const ViewPage: FC = () => {
                     ? `${styles.desks_duels_img}`
                     : ''
                 }
+                initial={{ opacity: 0 }} 
+                whileInView={{ opacity: 1 }} 
+                transition={{ duration: 1 }} 
+                viewport={{ once: true }}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
