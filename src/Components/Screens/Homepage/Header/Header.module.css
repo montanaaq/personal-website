@@ -47,7 +47,7 @@
   margin-right: 10px;
 }
 .name:hover {
-  color: #74baff;
+  color: var(--secondary);
 }
 .toggle_light_mode {
   margin-top: 3px;

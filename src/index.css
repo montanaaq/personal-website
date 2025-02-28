@@ -2,8 +2,10 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); */
 html[data-theme='light'] {
   --text-color: rgb(37, 37, 37);
-  --bg-color: e8e8e8;
+  --bg-color: #e8e8e8; /* Add the missing '#' */
   --circles-color: rgba(0, 0, 0, 0.2);
+  --lower-text-color: rgba(0, 0, 0, 0.7);
+  --secondary: #6200ee;
 }
 html {
   scroll-behavior: smooth;
@@ -96,8 +98,10 @@ li a:hover {
 @media only screen and (max-width: 768px) {
   html[data-theme='light'] {
     --text-color: rgb(37, 37, 37);
-    --bg-color: e8e8e8;
+    --bg-color: #e8e8e8; 
     --circles-color: rgba(0, 0, 0, 0.2);
+    --lower-text-color: rgba(0, 0, 0, 0.7);
+    --secondary: #1565c0; 
   }
   html {
     overflow-x: hidden;
