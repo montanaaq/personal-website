@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion as m, useScroll, useSpring } from 'framer-motion'
 import { FC } from 'react'
 import { ProjectsList } from '../../../data/Projects/ProjectsList'
 import Footer from '../Homepage/Footer/Footer'
@@ -23,7 +23,7 @@ const ViewPage: FC = () => {
 
   return (
     <div>
-      <motion.div className="progress-bar" style={{ scaleX }} />
+      <m.div className="progress-bar" style={{ scaleX }} />
       <Header />
       <div className={styles.main_post}>
         <header style={{ margin: '20px 0px 40px 0px' }}>
@@ -60,7 +60,7 @@ const ViewPage: FC = () => {
             ))}
           </ul>
           {ProjectsList.map(el => (
-            <motion.div
+            <m.div
               className={styles.container}
               key={el.id}
               initial={{ opacity: 0, y: 50 }} // Начальное состояние (прозрачность 0, немного смещено вниз)
@@ -110,7 +110,7 @@ const ViewPage: FC = () => {
               ) : (
                 ''
               )}
-              <motion.img
+              <m.img
                 src={el.img}
                 alt="not downloaded"
                 className={
@@ -131,7 +131,7 @@ const ViewPage: FC = () => {
                 transition={{ duration: 1 }} 
                 viewport={{ once: true }}
               />
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

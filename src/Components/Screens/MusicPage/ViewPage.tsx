@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion as m, useScroll, useSpring } from 'framer-motion'
 import AuthorList from '../../../data/Music/AuthorList'
 import { MusicList } from '../../../data/Music/MusicList'
 import Footer from '../Homepage/Footer/Footer'
@@ -17,17 +17,17 @@ const ViewPage = () => {
 
   return (
     <>
-      <motion.div className="progress-bar" style={{ scaleX }} />
+      <m.div className="progress-bar" style={{ scaleX }} />
       <Header />
       <div className={styles.center}>
-        <motion.div
+        <m.div
           className={styles.main_post}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <div className={styles.mp_wrapper}>
-            <motion.div
+            <m.div
               className={styles.header_container}
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -46,10 +46,10 @@ const ViewPage = () => {
                 src="https://static-00.iconduck.com/assets.00/spotify-icon-2048x2048-5gqpkwih.png"
                 alt="spotify_ico"
               />
-            </motion.div>
+            </m.div>
 
             {/* Animate Authors */}
-            <motion.div
+            <m.div
               className={styles.author_container}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -57,7 +57,7 @@ const ViewPage = () => {
               viewport={{ once: true }}
             >
               {AuthorList.map((el, index) => (
-                <motion.div
+                <m.div
                   key={el.id}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -72,11 +72,11 @@ const ViewPage = () => {
                     link={el.link}
                     alt={el.alt}
                   />
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
+            </m.div>
 
-            <motion.h1
+            <m.h1
               style={{
                 display: 'flex',
                 gap: '10px',
@@ -88,12 +88,12 @@ const ViewPage = () => {
               viewport={{ once: true }}
             >
               Альбомы
-            </motion.h1>
+            </m.h1>
 
             {/* Animate Albums */}
-            <motion.div className={styles.music_container}>
+            <m.div className={styles.music_container}>
               {MusicList.map((el, index) => (
-                <motion.div
+                <m.div
                   className={styles.card_wrapper}
                   key={el.id}
                   initial={{ opacity: 0, y: 40 }}
@@ -110,11 +110,11 @@ const ViewPage = () => {
                     link={el.link}
                     duration={el.duration}
                   />
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
       <Footer />
     </>
