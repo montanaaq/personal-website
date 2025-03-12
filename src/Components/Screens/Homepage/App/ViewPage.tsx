@@ -41,7 +41,7 @@ const ViewPage: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
           >
-            <p>
+            <p style={{letterSpacing: '1.2px'}}>
               Hi! I'm{' '}
               <span>
                 <Typewriter
@@ -65,6 +65,8 @@ const ViewPage: FC = () => {
                 />
               </span>
             </p>
+
+            {/* Move these outside of <p> */}
             <SocialLinks />
             <div style={{ paddingTop: '15px' }}></div>
             <Buttons />

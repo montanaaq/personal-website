@@ -43,11 +43,13 @@
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
-  transition: 0.2s color;
+  transition: 0.2s;
   margin-right: 10px;
+  letter-spacing: 1.2px;
 }
 .name:hover {
   color: var(--secondary);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.084);
 }
 .toggle_light_mode {
   margin-top: 3px;
