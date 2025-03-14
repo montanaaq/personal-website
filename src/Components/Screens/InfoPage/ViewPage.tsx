@@ -1,4 +1,4 @@
-import { motion as m, useScroll, useSpring } from 'framer-motion'
+import { motion as m, useScroll, useSpring } from 'motion/react'
 import { FC } from 'react'
 import { ProjectsList } from '../../../data/Projects/ProjectsList'
 import Footer from '../Homepage/Footer/Footer'

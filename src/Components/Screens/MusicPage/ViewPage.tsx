@@ -1,4 +1,4 @@
-import { motion as m, useScroll, useSpring } from 'framer-motion'
+import { motion as m, useScroll, useSpring } from 'motion/react'
 import AuthorList from '../../../data/Music/AuthorList'
 import { MusicList } from '../../../data/Music/MusicList'
 import Footer from '../Homepage/Footer/Footer'

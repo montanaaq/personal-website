@@ -1,4 +1,4 @@
-import { motion as m } from 'framer-motion'
+import { motion as m } from 'motion/react'
 import { FC } from 'react'
 import Typewriter, { TypewriterClass } from 'typewriter-effect'
 import Buttons from '../Buttons.tsx'

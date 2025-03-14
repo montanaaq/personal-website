@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from 'framer-motion'
+import { motion, useScroll, useSpring } from 'motion/react'
 import { FC } from 'react'
 import Header from '../Homepage/Header/Header'
 import Edit from './Edit'
