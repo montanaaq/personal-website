@@ -41,7 +41,7 @@ const ViewPage: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
           >
-            <p style={{letterSpacing: '1.2px'}}>
+            <p style={{letterSpacing: '1.05px'}}>
               Hi! I'm{' '}
               <span>
                 <Typewriter
