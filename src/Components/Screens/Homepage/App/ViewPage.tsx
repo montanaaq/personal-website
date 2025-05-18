@@ -30,7 +30,7 @@ const ViewPage: FC = () => {
             alt="out"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
             className={styles.image}
           />
 
@@ -39,32 +39,36 @@ const ViewPage: FC = () => {
             className={styles.namespace}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
           >
-            <p style={{letterSpacing: '1.05px'}}>
+            <m.p
+              style={{ letterSpacing: '1.1px', fontWeight: 500 }}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
               Hi! I'm{' '}
               <span>
                 <Typewriter
                   options={{
                     deleteSpeed: 'natural',
                     autoStart: true,
-                    cursor: '_',
-                    delay: 180
+                    delay: 140
                   }}
                   onInit={(typewriter: TypewriterClass) => {
                     typewriter
-                      .typeString('Montana')
-                      .pauseFor(1000)
+                      .typeString('Amir aka Montana')
+                      .pauseFor(700)
                       .deleteAll()
-                      .typeString('Python, Frontend Developer')
-                      .pauseFor(1000)
+                      .typeString('Fullstack Developer')
+                      .pauseFor(700)
                       .deleteAll()
-                      .typeString('Montana')
+                      .typeString('Amir aka Montana')
                       .start()
                   }}
                 />
               </span>
-            </p>
+            </m.p>
 
             {/* Move these outside of <p> */}
             <SocialLinks />
