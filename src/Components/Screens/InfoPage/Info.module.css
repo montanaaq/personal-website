@@ -1,8 +1,13 @@
 .main_post {
   position: relative;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   max-width: calc(var(--main-width) + var(--gap) * 2);
   margin: auto;
+  padding: calc(var(--header-height) + var(--gap)) var(--gap) var(--gap)
+    var(--gap);
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 .container {
   margin-top: 30px;
@@ -99,68 +104,40 @@ a:not(.footer_span) {
 
 @media only screen and (max-width: 768px) {
   .main_post {
-    padding: 20px;
-  }
-  .post-content {
-    padding: 0 10px;
+    padding: calc(var(--header-height) + 15px) 15px 15px 15px;
   }
 
-  .post-content h2 {
-    font-size: 24px;
+  .container {
+    margin-top: 20px;
   }
 
-  .post-content ul {
-    padding: 0;
+  .post_content img {
+    width: 280px;
+    height: 280px;
   }
 
-  .post-content ul li {
-    margin-bottom: 10px;
-  }
-
-  .post-content
-    img:not(.sneaknews_img):not(.uni_finder_website_img):not(
-      .profile_website_img
-    ):not(.schedulebot_img):not(.desks_duels_img) {
-    width: 300px;
-    height: 300px;
-    border-radius: 15px;
-    margin-bottom: 50px;
-    margin-top: 15px;
-  }
   .sneaknews_img {
-    width: 340px;
-    height: 600px;
-    border-radius: 15px;
-    margin-bottom: 50px;
-    margin-top: 15px;
+    width: 300px;
+    height: 525px;
   }
+
   .uni_finder_website_img {
-    width: 350px;
-    height: 225px;
-    border-radius: 15px;
-    margin-bottom: 50px;
-    margin-top: 15px;
+    width: 400px;
+    height: 267px;
   }
+
   .profile_website_img {
     width: 300px;
-    height: 360px;
-    border: 0.1px solid var(--text-color);
-    margin-top: 10px;
-    border-radius: 15px;
-    margin-bottom: 10px;
+    height: 356px;
   }
+
   .schedulebot_img {
-    width: 335px;
-    height: 250px;
-    border-radius: 15px;
-    margin-bottom: 50px;
-    margin-top: 15px;
+    width: 400px;
+    height: 308px;
   }
+
   .desks_duels_img {
-    width: 200px;
-    height: 425px;
-    border-radius: 15px;
-    margin-bottom: 50px;
-    margin-top: 15px;
+    width: 250px;
+    height: 542px;
   }
 }

@@ -1,12 +1,14 @@
 import { useState, FC } from 'react'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
+import { motion } from 'motion/react'
+import { useLanguage } from '../../../../contexts/LanguageContext'
 import styles from './Header.module.css'
-
 
 const LightModeToggle: FC = () => {
   const [lightMode, setLightMode] = useState(false)
+  const { t } = useLanguage()
 
   const toggleLightMode = () => {
     const isLightMode =
@@ -17,20 +19,28 @@ const LightModeToggle: FC = () => {
     )
     setLightMode(!lightMode)
     !lightMode
-      ? toast.info('Light theme activated!')
-      : toast.info('Dark theme activated!')
+      ? toast.info(t.theme.lightActivated)
+      : toast.info(t.theme.darkActivated)
   }
 
   return (
     <div>
-      <Toaster richColors position='bottom-left' expand />
-      <button onClick={toggleLightMode} className={styles.toggle_light_mode}>
+      <motion.button
+        onClick={toggleLightMode}
+        className={styles.toggle_light_mode}
+        whileHover={{
+          scale: 1.1,
+          rotate: 180,
+          transition: { type: 'spring', stiffness: 300, damping: 10 }
+        }}
+        transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+      >
         {!lightMode ? (
           <LightModeIcon fontSize="small" />
         ) : (
           <DarkModeIcon fontSize="small" />
         )}
-      </button>
+      </motion.button>
     </div>
   )
 }

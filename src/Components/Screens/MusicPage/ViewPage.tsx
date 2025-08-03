@@ -1,24 +1,19 @@
-import { motion as m, useScroll, useSpring } from 'motion/react'
-import AuthorList from '../../../data/Music/AuthorList'
-import { MusicList } from '../../../data/Music/MusicList'
+import { motion as m } from 'motion/react'
+import { useLanguage } from '../../../contexts/LanguageContext'
+import { useAuthorList } from '../../../data/Music/AuthorListLocalized'
+import { useMusicList } from '../../../data/Music/MusicListLocalized'
 import Footer from '../Homepage/Footer/Footer'
-import Header from '../Homepage/Header/Header'
 import AuthorCard from './AuthorCard'
 import Card from './Card'
 import styles from './MusicPage.module.css'
 
 const ViewPage = () => {
-  const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  })
+  const { t } = useLanguage()
+  const MusicList = useMusicList()
+  const AuthorList = useAuthorList()
 
   return (
     <>
-      <m.div className="progress-bar" style={{ scaleX }} />
-      <Header />
       <div className={styles.center}>
         <m.div
           className={styles.main_post}
@@ -34,16 +29,18 @@ const ViewPage = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
               <h1
-                dangerouslySetInnerHTML={{
-                  __html: 'Моя <p style="color: var(--secondary)"> музыка</p>'
-                }}
                 style={{
                   display: 'flex',
                   gap: '10px'
                 }}
-              ></h1>
+              >
+                {t.music.title}{' '}
+                <span style={{ color: 'var(--secondary)' }}>
+                  {t.music.titleHighlight}
+                </span>
+              </h1>
               <img
-                src="https://static-00.iconduck.com/assets.00/spotify-icon-2048x2048-5gqpkwih.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
                 alt="spotify_ico"
               />
             </m.div>
@@ -87,7 +84,7 @@ const ViewPage = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Альбомы
+              {t.music.albums}
             </m.h1>
 
             {/* Animate Albums */}

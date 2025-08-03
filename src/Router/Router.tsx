@@ -9,6 +9,6 @@ const Router: FC = () => {
         return <Route key={index} path={route.path} element={route.element} />
       })}
     </Routes>
-)
+  )
 }
 export default Router

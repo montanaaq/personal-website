@@ -1,19 +1,14 @@
-import { motion as m, useScroll, useSpring } from 'motion/react'
+import { motion as m } from 'motion/react'
 import { FC } from 'react'
-import { ProjectsList } from '../../../data/Projects/ProjectsList'
+import { useLanguage } from '../../../contexts/LanguageContext'
+import { useProjectsList } from '../../../data/Projects/ProjectsListLocalized'
 import Footer from '../Homepage/Footer/Footer'
-import Header from '../Homepage/Header/Header'
 import styles from './Info.module.css'
 
 const ViewPage: FC = () => {
   const today = new Date()
-
-  const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  })
+  const { t } = useLanguage()
+  const ProjectsList = useProjectsList()
 
   const formattedDate = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
@@ -23,12 +18,15 @@ const ViewPage: FC = () => {
 
   return (
     <div>
-      <m.div className="progress-bar" style={{ scaleX }} />
-      <Header />
       <div className={styles.main_post}>
         <header style={{ margin: '20px 0px 40px 0px' }}>
-          <h1 style={{ fontSize: '38px', fontWeight: 600 }}>
-            Мои <span style={{ color: 'var(--secondary)' }}>проекты</span>
+          <h1 style={{ fontSize: '2.375rem', fontWeight: 600 }}>
+            {' '}
+            {/* 38px / 16px = 2.375rem */}
+            {t.info.title}{' '}
+            <span style={{ color: 'var(--secondary)' }}>
+              {t.info.titleHighlight}
+            </span>
           </h1>
           <div>
             <span>{formattedDate}</span>
@@ -36,7 +34,7 @@ const ViewPage: FC = () => {
         </header>
         <div className={styles.post_content}>
           <h2 style={{ textAlign: 'left', marginBottom: '15px' }}>
-            Содержание
+            {t.info.content}
           </h2>
           <ul
             style={{
@@ -71,13 +69,22 @@ const ViewPage: FC = () => {
               <h2 style={{ marginBottom: '10px' }} id={el.url}>
                 {el.main_name} ({el.date})
               </h2>
-              <p style={{ marginBottom: '10px', color: 'var(--lower-text-color)' }}>{el.p}</p>
+              <p
+                style={{
+                  marginBottom: '10px',
+                  color: 'var(--lower-text-color)'
+                }}
+              >
+                {el.p}
+              </p>
               <p className={styles.status}>
-                Статус:{' '}
+                {t.info.status}{' '}
                 {el.isSupport ? (
-                  <span className={styles.support}>Поддерживается</span>
+                  <span className={styles.support}>{t.info.supported}</span>
                 ) : (
-                  <span className={styles.not_support}>Не поддерживается</span>
+                  <span className={styles.not_support}>
+                    {t.info.notSupported}
+                  </span>
                 )}
               </p>
               {el.link && (
@@ -87,10 +94,10 @@ const ViewPage: FC = () => {
                     target="_blank"
                     href={el.link}
                     style={{
-                      color: 'var(--text-color)',
+                      color: 'var(--text-color)'
                     }}
                   >
-                    Ссылка
+                    {t.info.link}
                   </a>
                 </div>
               )}
@@ -104,7 +111,7 @@ const ViewPage: FC = () => {
                       color: 'var(--lower-text-color)'
                     }}
                   >
-                    Source code
+                    {t.info.sourceCode}
                   </a>
                 </div>
               ) : (
@@ -117,18 +124,18 @@ const ViewPage: FC = () => {
                   el.url === 'sneaknews'
                     ? `${styles.sneaknews_img}`
                     : el.url === 'uni_finder_website'
-                    ? `${styles.uni_finder_website_img}`
-                    : el.url === 'my_website'
-                    ? `${styles.profile_website_img}`
-                    : el.url === 'schedulebot'
-                    ? `${styles.schedulebot_img}`
-                    : el.url === 'desks_duels'
-                    ? `${styles.desks_duels_img}`
-                    : ''
+                      ? `${styles.uni_finder_website_img}`
+                      : el.url === 'my_website'
+                        ? `${styles.profile_website_img}`
+                        : el.url === 'schedulebot'
+                          ? `${styles.schedulebot_img}`
+                          : el.url === 'desks_duels'
+                            ? `${styles.desks_duels_img}`
+                            : ''
                 }
-                initial={{ opacity: 0 }} 
-                whileInView={{ opacity: 1 }} 
-                transition={{ duration: 1 }} 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
                 viewport={{ once: true }}
               />
             </m.div>

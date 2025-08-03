@@ -44,9 +44,7 @@ const Edit: FC<EditProps> = ({
           marginBottom: '50px'
         }}
       >
-        <h2
-          dangerouslySetInnerHTML={{ __html: header }}
-        ></h2>
+        <h2 dangerouslySetInnerHTML={{ __html: header }}></h2>
         <img
           src={img}
           alt={alt}
@@ -58,7 +56,7 @@ const Edit: FC<EditProps> = ({
       <div className={styles.settings}>
         <pre
           style={{
-            fontSize: '18px',
+            fontSize: '1.125rem' /* 18px / 16px = 1.125rem */,
             marginBottom: '20px'
           }}
         >

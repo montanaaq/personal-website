@@ -1,16 +1,17 @@
 import { motion as m } from 'motion/react'
 import { FC } from 'react'
 import Typewriter, { TypewriterClass } from 'typewriter-effect'
+import { useLanguage } from '../../../../contexts/LanguageContext'
 import Buttons from '../Buttons.tsx'
 import Footer from '../Footer/Footer.tsx'
-import Header from '../Header/Header.tsx'
 import SocialLinks from '../SocialLinks.tsx'
 import styles from './App.module.css'
 
 const ViewPage: FC = () => {
+  const { t } = useLanguage()
+
   return (
     <>
-      <Header />
       <m.div
         className={styles.main}
         initial={{ opacity: 0 }}
@@ -47,7 +48,7 @@ const ViewPage: FC = () => {
               animate={{ scale: 1 }}
               transition={{ duration: 0.8 }}
             >
-              Hi! I'm{' '}
+              {t.homepage.greeting}{' '}
               <span>
                 <Typewriter
                   options={{
@@ -57,13 +58,13 @@ const ViewPage: FC = () => {
                   }}
                   onInit={(typewriter: TypewriterClass) => {
                     typewriter
-                      .typeString('Amir aka Montana')
+                      .typeString(t.homepage.name)
                       .pauseFor(700)
                       .deleteAll()
-                      .typeString('Fullstack Developer')
+                      .typeString(t.homepage.role)
                       .pauseFor(700)
                       .deleteAll()
-                      .typeString('Amir aka Montana')
+                      .typeString(t.homepage.name)
                       .start()
                   }}
                 />
@@ -72,12 +73,14 @@ const ViewPage: FC = () => {
 
             {/* Move these outside of <p> */}
             <SocialLinks />
-            <div style={{ paddingTop: '15px' }}></div>
-            <Buttons />
           </m.div>
+
+          <div style={{ paddingTop: '15px' }}></div>
+          <Buttons />
         </m.div>
+
+        <Footer />
       </m.div>
-      <Footer />
     </>
   )
 }

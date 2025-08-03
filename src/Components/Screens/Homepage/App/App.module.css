@@ -3,7 +3,13 @@
   max-width: calc(var(--main-width) + var(--gap) * 2);
   margin: auto;
   padding: var(--gap);
+  padding-top: calc(var(--header-height) + var(--gap));
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
+
 .main .info_container {
   font-weight: 500;
   display: flex;
@@ -11,10 +17,9 @@
   justify-content: center;
   flex-direction: column;
   gap: 10px;
-  min-height: calc(
-    100vh - var(--header-height) - var(--footer-height) - (var(--gap) * 2)
-  );
+  flex: 1;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .info_container .namespace span:nth-child(1) {
@@ -37,7 +42,7 @@
   flex-direction: column;
 }
 .info_container .namespace p {
-  font-size: 26px;
+  font-size: 1.625rem; /* 26px / 16px = 1.625rem */
   font-weight: 400;
 }
 .info_container .namespace span:nth-child(1) {
@@ -70,7 +75,7 @@
   margin-top: 5px;
 }
 .namespace .projects-list p {
-  font-size: 18px;
+  font-size: 1.125rem; /* 18px / 16px = 1.125rem */
 }
 .namespace .projects-list a {
   color: var(--secondary);
@@ -82,24 +87,34 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .main {
+    padding: 15px;
+    padding-top: calc(var(--header-height) + 15px);
+  }
+
   .main .info_container {
     display: flex;
     flex-direction: column;
+    gap: 8px;
   }
+
   .projects-list {
     padding-top: 10px;
   }
 
   .projects-list p {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px / 16px = 0.875rem */
     color: var(--text-color);
   }
+
   .namespace p {
     margin-top: 10px;
   }
+
   .info_container p {
-    font-size: 30px;
+    font-size: 1.875rem; /* 30px / 16px = 1.875rem */
   }
+
   .image {
     width: 200px;
     height: 200px;
