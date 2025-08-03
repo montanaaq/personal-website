@@ -1,4 +1,3 @@
-import { motion } from 'motion/react'
 import { FC } from 'react'
 import { useLanguage } from '../../../contexts/LanguageContext'
 import Edit from './Edit'
