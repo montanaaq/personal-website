@@ -7,6 +7,9 @@
     var(--gap);
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
 }
 
@@ -144,9 +147,15 @@
   .author_card {
     gap: 30px;
     margin: 5px;
+    flex-direction: column;
   }
   .author_card div {
     gap: 8px;
+    display: flex;
+    align-items: center;
+  }
+  .author_card p {
+    text-align: center;
   }
   .author_info {
     font-size: 0.8125rem; /* 13px / 16px = 0.8125rem */

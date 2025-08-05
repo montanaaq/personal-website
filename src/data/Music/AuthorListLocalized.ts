@@ -32,7 +32,7 @@ export const useAuthorList = (): AuthorList[] => {
     {
       id: 3,
       name: t.musicAuthors.blackSabbath.name,
-      img: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Sabs.jpg',
+      img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Sabs.jpg/960px-Sabs.jpg',
       info: t.musicAuthors.blackSabbath.info,
       link: 'https://ru.wikipedia.org/wiki/Black_Sabbath',
       alt: 'black_sabbath'

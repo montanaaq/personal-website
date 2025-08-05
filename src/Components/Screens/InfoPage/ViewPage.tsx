@@ -61,10 +61,10 @@ const ViewPage: FC = () => {
             <m.div
               className={styles.container}
               key={el.id}
-              initial={{ opacity: 0, y: 50 }} // Начальное состояние (прозрачность 0, немного смещено вниз)
-              whileInView={{ opacity: 1, y: 0 }} // Когда в области просмотра — полностью видно
-              transition={{ duration: 0.4, ease: 'easeOut' }} // Плавное появление
-              viewport={{ once: true }} // Анимация срабатывает только один раз
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              viewport={{ once: true }}
             >
               <h2 style={{ marginBottom: '10px' }} id={el.url}>
                 {el.main_name} ({el.date})

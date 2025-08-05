@@ -7,6 +7,9 @@
     var(--gap);
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
 }
 .container {
@@ -111,7 +114,10 @@ a:not(.footer_span) {
     margin-top: 20px;
   }
 
-  .post_content img {
+  .post_content
+    img:not(.sneaknews_img):not(.uni_finder_website_img):not(
+      .profile_website_img
+    ):not(.schedulebot_img):not(.desks_duels_img) {
     width: 280px;
     height: 280px;
   }

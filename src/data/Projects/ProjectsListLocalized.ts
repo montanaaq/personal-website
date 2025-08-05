@@ -83,7 +83,7 @@ export const useProjectsList = (): IProjectsList[] => {
       img: 'https://i.imgur.com/aXASI67.jpeg',
       main_name: 'Desks Duels',
       date: t.projects.desksDuels.date,
-      isSupport: true,
+      isSupport: false,
       link: 'https://t.me/desksduels_bot',
       source_code: 'https://github.com/montanaaq/desks_duels'
     }
