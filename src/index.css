@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 html[data-theme='light'] {
   --text-color: rgb(37, 37, 37);
@@ -48,18 +48,9 @@ body {
   color: var(--text-color);
   transition: 0.2s;
   font-family:
-    'Montserrat',
+    'Nunito Sans',
     system-ui,
     -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Open Sans',
-    'Helvetica Neue',
-    sans-serif,
     sans-serif;
   font-optical-sizing: auto;
   animation: animateOnLoad 0.5s linear;
