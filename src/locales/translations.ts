@@ -9,6 +9,7 @@ export interface Translations {
     greeting: string
     name: string
     role: string
+    leetcode: string
   }
 
   // Footer
@@ -167,7 +168,8 @@ export const translations: Record<string, Translations> = {
     homepage: {
       greeting: 'Привет! Я',
       name: 'Амир aka Montana',
-      role: 'Фуллстек разработчик'
+      role: 'Фуллстек разработчик',
+      leetcode: 'Найди меня на '
     },
     footer: {
       text: '© 2025 Montana. Все права защищены.'
@@ -317,7 +319,8 @@ export const translations: Record<string, Translations> = {
     homepage: {
       greeting: "Hi! I'm",
       name: 'Amir aka Montana',
-      role: 'Fullstack Developer'
+      role: 'Fullstack Developer',
+      leetcode: 'Reach me on'
     },
     footer: {
       text: '© 2025 Montana. All rights reserved.'

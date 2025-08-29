@@ -1,11 +1,16 @@
-import { motion as m } from 'motion/react'
 import { FC } from 'react'
+
+import { motion as m } from 'motion/react'
 import Typewriter, { TypewriterClass } from 'typewriter-effect'
-import { useLanguage } from '../../../../contexts/LanguageContext'
-import Buttons from '../Buttons.tsx'
+import Button from '@mui/material/Button'
+
 import Footer from '../Footer/Footer.tsx'
-import SocialLinks from '../SocialLinks.tsx'
+
+import { useLanguage } from '../../../../contexts/LanguageContext'
+
+import Buttons from '../Buttons.tsx'
 import styles from './App.module.css'
+import SocialLinks from '../SocialLinks.tsx'
 
 const ViewPage: FC = () => {
   const { t } = useLanguage()
@@ -77,6 +82,24 @@ const ViewPage: FC = () => {
 
           <div style={{ paddingTop: '15px' }}></div>
           <Buttons />
+
+          <div className={styles.leetcode}>
+            <span>{t.homepage.leetcode}</span>
+            <Button variant="text">
+              <a
+                href="https://leetcode.com/u/montanaaq/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: 'var(--secondary)',
+                  textTransform: 'capitalize',
+                  fontSize: '1.05rem'
+                }}
+              >
+                LeetCode
+              </a>
+            </Button>
+          </div>
         </m.div>
 
         <Footer />

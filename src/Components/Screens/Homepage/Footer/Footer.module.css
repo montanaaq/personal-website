@@ -34,6 +34,7 @@
   text-underline-offset: 2px;
   text-decoration-thickness: 0.04rem;
 }
+
 @media only screen and (max-width: 768px) {
   .footer {
     font-size: 0.6875rem; /* 11px / 16px = 0.6875rem */
