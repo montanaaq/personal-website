@@ -86,19 +86,6 @@
   transition: 0.2s;
 }
 
-.leetcode {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-}
-
-.leetcode span {
-  color: var(--text-color);
-  opacity: .6;
-  font-size: 1.25rem;
-}
-
-
 @media only screen and (max-width: 768px) {
   .main {
     padding: 15px;

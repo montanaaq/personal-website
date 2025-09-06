@@ -1,7 +1,8 @@
+import { ReactElement } from 'react'
+
 import App from '../Components/Screens/Homepage/App/App'
 import InfoPage from '../Components/Screens/InfoPage/Info'
 import IdePage from '../Components/Screens/IDEPage/IdePage'
-import { ReactElement } from 'react'
 import MusicPage from '../Components/Screens/MusicPage/MusicPage'
 
 interface IRoute {

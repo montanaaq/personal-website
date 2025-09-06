@@ -18,9 +18,12 @@ const LightModeToggle: FC = () => {
       isLightMode ? 'dark' : 'light'
     )
     setLightMode(!lightMode)
-    !lightMode
-      ? toast.info(t.theme.lightActivated)
-      : toast.info(t.theme.darkActivated)
+
+    if (!lightMode) {
+      toast.info(t.theme.lightActivated)
+    } else {
+      toast.info(t.theme.darkActivated)
+    }
   }
 
   return (
