@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { useLanguage } from '../../../contexts/LanguageContext'
+import { useLanguage } from '../../../hooks/useLanguage'
 import Edit from './Edit'
 import styles from './IDEPage.module.css'
 import Footer from '../Homepage/Footer/Footer'

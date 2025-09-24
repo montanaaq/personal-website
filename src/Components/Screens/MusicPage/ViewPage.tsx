@@ -1,5 +1,5 @@
 import { motion as m } from 'motion/react'
-import { useLanguage } from '../../../contexts/LanguageContext'
+import { useLanguage } from '../../../hooks/useLanguage'
 import { useAuthorList } from '../../../data/Music/AuthorListLocalized'
 import { useMusicList } from '../../../data/Music/MusicListLocalized'
 import Footer from '../Homepage/Footer/Footer'

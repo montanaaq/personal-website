@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button'
 import { Link } from 'react-router-dom'
 import { FC } from 'react'
-import { useLanguage } from '../../../contexts/LanguageContext'
+import { useLanguage } from '../../../hooks/useLanguage'
 import styles from './Homepage.module.css'
 
 const Buttons: FC = () => {

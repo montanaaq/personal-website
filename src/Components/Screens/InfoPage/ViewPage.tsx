@@ -1,6 +1,6 @@
 import { motion as m } from 'motion/react'
 import { FC } from 'react'
-import { useLanguage } from '../../../contexts/LanguageContext'
+import { useLanguage } from '../../../hooks/useLanguage'
 import { useProjectsList } from '../../../data/Projects/ProjectsListLocalized'
 import Footer from '../Homepage/Footer/Footer'
 import styles from './Info.module.css'

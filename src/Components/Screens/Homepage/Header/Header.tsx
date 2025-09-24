@@ -2,7 +2,7 @@ import LightModeToggle from './LightModeToggle.js'
 import LanguageToggle from './LanguageToggle'
 import { Link } from 'react-router-dom'
 import { FC, useEffect, useState } from 'react'
-import { useLanguage } from '../../../../contexts/LanguageContext'
+import { useLanguage } from '../../../../hooks/useLanguage.js'
 import { motion } from 'motion/react'
 import styles from './Header.module.css'
 

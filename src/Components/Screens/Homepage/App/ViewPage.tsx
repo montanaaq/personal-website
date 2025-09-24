@@ -5,7 +5,7 @@ import Typewriter, { TypewriterClass } from 'typewriter-effect'
 
 import Footer from '../Footer/Footer.tsx'
 
-import { useLanguage } from '../../../../contexts/LanguageContext'
+import { useLanguage } from '../../../../hooks/useLanguage.ts'
 
 import Buttons from '../Buttons.tsx'
 import styles from './App.module.css'

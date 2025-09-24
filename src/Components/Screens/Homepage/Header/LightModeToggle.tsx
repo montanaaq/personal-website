@@ -3,7 +3,7 @@ import LightModeIcon from '@mui/icons-material/LightMode'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import { toast } from 'sonner'
 import { motion } from 'motion/react'
-import { useLanguage } from '../../../../contexts/LanguageContext'
+import { useLanguage } from '../../../../hooks/useLanguage'
 import styles from './Header.module.css'
 
 const LightModeToggle: FC = () => {
