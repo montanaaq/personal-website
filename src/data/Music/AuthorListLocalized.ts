@@ -1,4 +1,5 @@
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from "../../hooks/useLanguage"
+
 
 interface AuthorList {
   id: number
