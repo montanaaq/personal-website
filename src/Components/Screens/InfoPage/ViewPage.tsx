@@ -7,10 +7,15 @@ import styles from './Info.module.css'
 
 const ViewPage: FC = () => {
   const today = new Date()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const ProjectsList = useProjectsList()
 
-  const formattedDate = new Intl.DateTimeFormat('en-US', {
+  const languageMap: Record<string, string> = {
+    en: 'en-US',
+    ru: 'ru-RU'
+  }
+
+  const formattedDate = new Intl.DateTimeFormat(languageMap[language], {
     year: 'numeric',
     month: 'long',
     day: 'numeric'

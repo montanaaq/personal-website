@@ -1,23 +1,18 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+// File: src/contexts/LanguageContext.tsx
+import React, { createContext, ReactNode, useState } from 'react'
 import { translations, Translations } from '../locales/translations'
 
-interface LanguageContextType {
-  language: string
+export type Language = 'en' | 'ru'
+
+export interface LanguageContextType {
+  language: Language
   t: Translations
-  setLanguage: (lang: string) => void
+  setLanguage: (lang: Language) => void
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(
+export const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 )
-
-export const useLanguage = () => {
-  const context = useContext(LanguageContext)
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider')
-  }
-  return context
-}
 
 interface LanguageProviderProps {
   children: ReactNode
@@ -26,19 +21,29 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   children
 }) => {
-  const [language, setLanguageState] = useState(() => {
-    const savedLanguage = localStorage.getItem('language')
-    return savedLanguage || 'ru'
+  const isLanguage = (v: unknown): v is Language => v === 'en' || v === 'ru'
+
+  const [language, setLanguageState] = useState<Language>(() => {
+    try {
+      const saved = localStorage.getItem('language')
+      return isLanguage(saved) ? saved : 'ru'
+    } catch {
+      return 'ru'
+    }
   })
 
-  const setLanguage = (lang: string) => {
+  const setLanguage = (lang: Language) => {
     setLanguageState(lang)
-    localStorage.setItem('language', lang)
+    try {
+      localStorage.setItem('language', lang)
+    } catch {
+      // ignore localStorage errors
+    }
   }
 
-  const t = translations[language] || translations.ru
+  const t = translations[language] ?? translations.ru
 
-  const value = {
+  const value: LanguageContextType = {
     language,
     t,
     setLanguage
