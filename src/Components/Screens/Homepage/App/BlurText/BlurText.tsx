@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { useState } from 'react'
+import { useMemo } from 'react'
 import { motion as m } from 'motion/react'
 import { useNavigate } from 'react-router-dom'
 
@@ -15,8 +15,6 @@ type BlurTextProps = {
   className?: string
   animateBy?: 'words' | 'letters'
   direction?: 'top' | 'bottom'
-  threshold?: number
-  rootMargin?: string
   animationFrom?: Record<string, string | number>
   animationTo?: Array<Record<string, string | number>>
   easing?: (t: number) => number
@@ -59,41 +57,54 @@ const BlurText: React.FC<BlurTextProps> = ({
   links = []
 }) => {
   const navigate = useNavigate()
-  const elements = animateBy === 'words' ? text.split(' ') : text.split('')
-  const [inView, setInView] = useState(true)
 
-  const defaultFrom =
-    direction === 'top'
-      ? { filter: 'blur(10px)', opacity: 0, y: -50 }
-      : { filter: 'blur(10px)', opacity: 0, y: 50 }
+  // Мемоизируем разбиение текста
+  const elements = useMemo(
+    () => (animateBy === 'words' ? text.split(' ') : text.split('')),
+    [text, animateBy]
+  )
 
-  const defaultTo = [
-    {
-      filter: 'blur(5px)',
-      opacity: 0.5,
-      y: direction === 'top' ? 5 : -5
-    },
-    { filter: 'blur(0px)', opacity: 1, y: 0 }
-  ]
+  // Мемоизируем дефолтные анимации
+  const defaultFrom = useMemo(
+    () =>
+      direction === 'top'
+        ? { filter: 'blur(10px)', opacity: 0, y: -50 }
+        : { filter: 'blur(10px)', opacity: 0, y: 50 },
+    [direction]
+  )
+
+  const defaultTo = useMemo(
+    () => [
+      {
+        filter: 'blur(5px)',
+        opacity: 0.5,
+        y: direction === 'top' ? 5 : -5
+      },
+      { filter: 'blur(0px)', opacity: 1, y: 0 }
+    ],
+    [direction]
+  )
 
   const fromSnapshot = animationFrom ?? defaultFrom
   const toSnapshots = animationTo ?? defaultTo
 
-  const stepCount = toSnapshots.length + 1
-  const totalDuration = stepDuration * (stepCount - 1)
-  const times = Array.from({ length: stepCount }, (_, i) =>
-    stepCount === 1 ? 0 : i / (stepCount - 1)
-  )
+  // Мемоизируем расчеты анимации
+  const { totalDuration, times } = useMemo(() => {
+    const stepCount = toSnapshots.length + 1
+    const duration = stepDuration * (stepCount - 1)
+    const timeArray = Array.from({ length: stepCount }, (_, i) =>
+      stepCount === 1 ? 0 : i / (stepCount - 1)
+    )
+    return { totalDuration: duration, times: timeArray }
+  }, [toSnapshots.length, stepDuration])
 
   // Функция для поиска ссылки для слова
   const findLinkForWord = (word: string) => {
-    // Сначала проверяем массив links
     const linkConfig = links.find(
       link => link.word.toLowerCase() === word.toLowerCase()
     )
     if (linkConfig) return linkConfig.url
 
-    // Если не найдено, проверяем одиночную ссылку (для обратной совместимости)
     if (linkWord && word.toLowerCase() === linkWord.toLowerCase()) {
       return linkTo
     }
@@ -102,7 +113,6 @@ const BlurText: React.FC<BlurTextProps> = ({
   }
 
   const handleLinkClick = (url: string) => (e: React.MouseEvent) => {
-    // Если это mailto или внешняя ссылка, не preventDefault
     if (
       url.startsWith('mailto:') ||
       url.startsWith('http://') ||
@@ -111,15 +121,19 @@ const BlurText: React.FC<BlurTextProps> = ({
       return
     }
 
-    // Для внутренних маршрутов используем navigate
     e.preventDefault()
     navigate(url)
   }
 
+  // Мемоизируем keyframes
+  const animateKeyframes = useMemo(
+    () => buildKeyframes(fromSnapshot, toSnapshots),
+    [fromSnapshot, toSnapshots]
+  )
+
   return (
     <p className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
       {elements.map((segment, index) => {
-        const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots)
         const linkUrl = findLinkForWord(segment)
 
         const spanTransition = {
@@ -135,7 +149,7 @@ const BlurText: React.FC<BlurTextProps> = ({
           <m.span
             key={index}
             initial={fromSnapshot}
-            animate={inView ? animateKeyframes : fromSnapshot}
+            animate={animateKeyframes}
             transition={spanTransition}
             onAnimationComplete={
               index === elements.length - 1 ? onAnimationComplete : undefined
