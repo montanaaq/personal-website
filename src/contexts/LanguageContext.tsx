@@ -2,9 +2,9 @@
 import React, { createContext, ReactNode, useState } from 'react'
 import { translations, Translations } from '../locales/translations'
 
-export type Language = 'en' | 'ru'
+type Language = 'en' | 'ru'
 
-export interface LanguageContextType {
+interface LanguageContextType {
   language: Language
   t: Translations
   setLanguage: (lang: Language) => void

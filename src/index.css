@@ -28,7 +28,7 @@ html {
 :root {
   --text-color: rgb(225, 255, 255);
   --lower-text-color: rgba(255, 255, 255, 0.7);
-  --bg-color: rgb(37, 37, 37);
+  --bg-color: rgb(22, 22, 22);
   --bg-color-rgb: 37, 37, 37;
   --circles-color: rgba(255, 255, 255, 0.2);
   --secondary: #1876d2;

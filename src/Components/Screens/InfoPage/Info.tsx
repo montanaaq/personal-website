@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import Circles from '../../Circles'
+import Circles from '../../Backgrounds/Circles/Circles'
 import ViewPage from './ViewPage'
 
 const InfoPage: FC = () => {

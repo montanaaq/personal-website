@@ -1,6 +1,6 @@
 .header {
   font-weight: 500;
-  font-size: 1.5rem; /* 24px / 16px = 1.5rem */
+  font-size: 1.25rem; /* 24px / 16px = 1.5rem */
   display: flex;
   width: 100%;
   height: var(--header-height);
@@ -130,7 +130,7 @@
   cursor: pointer;
   outline: none;
   transition: 0.2s ease-in-out;
-  font-size: 1.125rem; /* 18px / 16px = 1.125rem */
+  font-size: 1rem; /* 18px / 16px = 1.125rem */
   font-weight: 500;
   opacity: 0.8;
   border-radius: 8px;

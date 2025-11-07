@@ -1,91 +1,67 @@
-import { FC } from 'react'
+import { FC, useState } from 'react';
 
-import { motion as m } from 'motion/react'
-import Typewriter, { TypewriterClass } from 'typewriter-effect'
+import { motion as m } from 'motion/react';
 
-import Footer from '../Footer/Footer.tsx'
+import BlurText from './BlurText/BlurText';
 
-import { useLanguage } from '../../../../hooks/useLanguage.ts'
+import Footer from '../Footer/Footer';
 
-import Buttons from '../Buttons.tsx'
-import styles from './App.module.css'
-import SocialLinks from '../SocialLinks.tsx'
+import { useLanguage } from '../../../../hooks/useLanguage';
+
+import styles from './App.module.css';
 
 const ViewPage: FC = () => {
+  const [showSecondMessage, setShowSecondMessage] = useState(false)
+  const [showThirdMessage, setShowThirdMessage] = useState(false)
   const { t } = useLanguage()
 
   return (
-    <>
-      <m.div
-        className={styles.main}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        {/* Контейнер с инфо */}
-        <m.div
-          className={styles.info_container}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-        >
-          {/* Фото с анимацией появления */}
-          <m.img
-            src="./avatar.jpg"
-            alt="out"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className={styles.image}
+    <m.div
+      className={styles.main}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <m.div className={styles.info_container}>
+        <BlurText
+          text={t.homepage.welcome}
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={() => setShowSecondMessage(true)}
+          className={styles.blurred_text}
+        />
+
+        {showSecondMessage && (
+          <BlurText
+            text={t.homepage.projects}
+            delay={150}
+            animateBy="words"
+            direction="top"
+            linkWord={t.homepage.projectsWord}
+            linkTo="/info"
+            onAnimationComplete={() => setShowThirdMessage(true)}
+            className={styles.blurred_text}
           />
+        )}
 
-          {/* Блок с текстом */}
-          <m.div
-            className={styles.namespace}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
-          >
-            <m.p
-              style={{ letterSpacing: '1.1px', fontWeight: 500 }}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.8 }}
-            >
-              {t.homepage.greeting}{' '}
-              <span>
-                <Typewriter
-                  options={{
-                    deleteSpeed: 'natural',
-                    autoStart: true,
-                    delay: 140
-                  }}
-                  onInit={(typewriter: TypewriterClass) => {
-                    typewriter
-                      .typeString(t.homepage.name)
-                      .pauseFor(700)
-                      .deleteAll()
-                      .typeString(t.homepage.role)
-                      .pauseFor(700)
-                      .deleteAll()
-                      .typeString(t.homepage.name)
-                      .start()
-                  }}
-                />
-              </span>
-            </m.p>
-
-            {/* Move these outside of <p> */}
-            <SocialLinks />
-          </m.div>
-
-          <div style={{ paddingTop: '15px' }}></div>
-          <Buttons />
-        </m.div>
-
-        <Footer />
+        {showThirdMessage && (
+          <BlurText
+            text={t.homepage.links}
+            delay={150}
+            animateBy="words"
+            direction="top"
+            links={[
+              { word: t.homepage.linksWords[0], url: 'https://t.me/montaanaq' },
+              { word: t.homepage.linksWords[1], url: 'mailto:amirnurislamov123@gmail.com' }
+            ]}
+            className={styles.blurred_text}
+          />
+        )}
       </m.div>
-    </>
+
+      <Footer />
+    </m.div>
   )
 }
 

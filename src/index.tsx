@@ -1,11 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { Toaster } from 'sonner'
-import { LanguageProvider } from './contexts/LanguageContext'
-import Header from './Components/Screens/Homepage/Header/Header'
-import './index.css'
-import Router from './Router/Router'
+import React from 'react';
+
+import { Toaster } from 'sonner';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+
+import Router from './Router/Router';
+
+import { LanguageProvider } from './contexts/LanguageContext';
+
+import './index.css';
+
+import Header from './Components/Screens/Homepage/Header/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!)
 root.render(
@@ -15,10 +20,8 @@ root.render(
         <Header />
         <Router />
         <Toaster
-          richColors
+          theme='system'
           position="bottom-left"
-          expand
-          offset={80}
           closeButton
           duration={3000}
           toastOptions={{

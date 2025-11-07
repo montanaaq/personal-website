@@ -1,10 +1,13 @@
-import LightModeToggle from './LightModeToggle.js'
-import LanguageToggle from './LanguageToggle'
-import { Link } from 'react-router-dom'
-import { FC, useEffect, useState } from 'react'
-import { useLanguage } from '../../../../hooks/useLanguage.js'
-import { motion } from 'motion/react'
-import styles from './Header.module.css'
+import { FC, useEffect, useState } from 'react';
+
+import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
+
+import { useLanguage } from '../../../../hooks/useLanguage.js';
+
+import styles from './Header.module.css';
+import LanguageToggle from './LanguageToggle';
+import LightModeToggle from './LightModeToggle.js';
 
 const Header: FC = () => {
   const { t } = useLanguage()

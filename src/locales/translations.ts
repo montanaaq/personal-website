@@ -6,10 +6,11 @@ export interface Translations {
 
   // Homepage
   homepage: {
-    greeting: string
-    name: string
-    role: string
-    leetcode: string
+    welcome: string,
+    projects: string,
+    projectsWord: string,
+    links: string,
+    linksWords: string[]
   }
 
   // Footer
@@ -166,10 +167,11 @@ export const translations: Record<string, Translations> = {
       name: 'Montana'
     },
     homepage: {
-      greeting: 'Привет! Я',
-      name: 'Амир aka Montana',
-      role: 'Фуллстек разработчик',
-      leetcode: 'Найди меня на '
+      welcome: "Привет! Я Монтана (Амир Нурисламов), Фронтенд Разработчик",
+      projects: "Список проектов находится тут",
+      projectsWord: "тут",
+      links: "Связаться со мной Телеграм и Почта",
+      linksWords: ["Телеграм", "Почта"]
     },
     footer: {
       text: '© 2025 Montana. Все права защищены.'
@@ -208,7 +210,7 @@ export const translations: Record<string, Translations> = {
       themes:
         'Конечно же у меня есть очень много тем, которые также являются расширениями. Вот небольшой список моих любимых:',
       themesList:
-        'Catpuccin Themes, Andromeda, Eva Theme, Horizon Theme, Material Theme'
+        'Themes, Andromeda, Eva Theme, Horizon Theme, Material Theme'
     },
     buttons: {
       projects: 'Проекты',
@@ -317,10 +319,11 @@ export const translations: Record<string, Translations> = {
       name: 'Montana'
     },
     homepage: {
-      greeting: "Hi! I'm",
-      name: 'Amir aka Montana',
-      role: 'Fullstack Developer',
-      leetcode: 'Reach me on'
+      welcome: "Hi! I'm Montana (Amir Nurislamov), Frontend Developer",
+      projects: "Here is some of my projects",
+      projectsWord: "projects",
+      links: "Contact me by Telegram and Email",
+      linksWords: ["Telegram", "Email"]
     },
     footer: {
       text: '© 2025 Montana. All rights reserved.'
