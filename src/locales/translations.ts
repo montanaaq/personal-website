@@ -170,7 +170,7 @@ export const translations: Record<string, Translations> = {
       welcome: "Привет! Я Монтана (Амир Нурисламов), Фронтенд Разработчик",
       projects: "Список проектов находится тут",
       projectsWord: "тут",
-      links: "Связаться со мной Телеграм и Почта",
+      links: "Связаться со мной Телеграм или Почта",
       linksWords: ["Телеграм", "Почта"]
     },
     footer: {
@@ -322,7 +322,7 @@ export const translations: Record<string, Translations> = {
       welcome: "Hi! I'm Montana (Amir Nurislamov), Frontend Developer",
       projects: "Here is some of my projects",
       projectsWord: "projects",
-      links: "Contact me by Telegram and Email",
+      links: "Contact me by Telegram or Email",
       linksWords: ["Telegram", "Email"]
     },
     footer: {
