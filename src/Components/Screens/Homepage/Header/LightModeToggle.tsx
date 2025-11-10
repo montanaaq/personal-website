@@ -1,9 +1,12 @@
 import { useState, FC } from 'react'
-import LightModeIcon from '@mui/icons-material/LightMode'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
+
 import { toast } from 'sonner'
 import { motion } from 'motion/react'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
+
 import { useLanguage } from '../../../../hooks/useLanguage'
+
 import styles from './Header.module.css'
 
 const LightModeToggle: FC = () => {
@@ -37,6 +40,8 @@ const LightModeToggle: FC = () => {
           transition: { type: 'spring', stiffness: 300, damping: 10 }
         }}
         transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+        aria-label={lightMode ? t.theme.darkActivated : t.theme.lightActivated}
+        title={lightMode ? t.theme.darkActivated : t.theme.lightActivated}
       >
         {!lightMode ? (
           <LightModeIcon fontSize="small" />

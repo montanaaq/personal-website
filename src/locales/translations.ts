@@ -6,10 +6,10 @@ export interface Translations {
 
   // Homepage
   homepage: {
-    welcome: string,
-    projects: string,
-    projectsWord: string,
-    links: string,
+    welcome: string
+    projects: string
+    projectsWord: string
+    links: string
     linksWords: string[]
   }
 
@@ -167,11 +167,11 @@ export const translations: Record<string, Translations> = {
       name: 'Montana'
     },
     homepage: {
-      welcome: "Привет! Я Монтана (Амир Нурисламов), Фронтенд Разработчик",
-      projects: "Список проектов находится тут",
-      projectsWord: "тут",
-      links: "Связаться со мной Телеграм или Почта",
-      linksWords: ["Телеграм", "Почта"]
+      welcome: 'Привет! Я Монтана (Амир Нурисламов), Фронтенд Разработчик',
+      projects: 'Список проектов находится тут',
+      projectsWord: 'тут',
+      links: 'Связаться со мной Телеграм или Почта',
+      linksWords: ['Телеграм', 'Почта']
     },
     footer: {
       text: '© 2025 Montana. Все права защищены.'
@@ -209,8 +209,7 @@ export const translations: Record<string, Translations> = {
         'расширение, которое показывает ваши ошибки прямо в строке VSCode, очень полезно, так как видно где какая ошибка была допущена',
       themes:
         'Конечно же у меня есть очень много тем, которые также являются расширениями. Вот небольшой список моих любимых:',
-      themesList:
-        'Themes, Andromeda, Eva Theme, Horizon Theme, Material Theme'
+      themesList: 'Themes, Andromeda, Eva Theme, Horizon Theme, Material Theme'
     },
     buttons: {
       projects: 'Проекты',
@@ -320,10 +319,10 @@ export const translations: Record<string, Translations> = {
     },
     homepage: {
       welcome: "Hi! I'm Montana (Amir Nurislamov), Frontend Developer",
-      projects: "Here is some of my projects",
-      projectsWord: "projects",
-      links: "Contact me by Telegram or Email",
-      linksWords: ["Telegram", "Email"]
+      projects: 'Here is some of my projects',
+      projectsWord: 'projects',
+      links: 'Contact me by Telegram or Email',
+      linksWords: ['Telegram', 'Email']
     },
     footer: {
       text: '© 2025 Montana. All rights reserved.'

@@ -1,14 +1,14 @@
-import { FC, useState } from 'react';
+import { FC, useState } from 'react'
 
-import { motion as m } from 'motion/react';
+import { motion as m } from 'motion/react'
 
-import BlurText from './BlurText/BlurText';
+import BlurText from './BlurText/BlurText'
 
-import Footer from '../Footer/Footer';
+import Footer from '../Footer/Footer'
 
-import { useLanguage } from '../../../../hooks/useLanguage';
+import { useLanguage } from '../../../../hooks/useLanguage'
 
-import styles from './App.module.css';
+import styles from './App.module.css'
 
 const ViewPage: FC = () => {
   const [showSecondMessage, setShowSecondMessage] = useState(false)
@@ -53,7 +53,10 @@ const ViewPage: FC = () => {
             direction="top"
             links={[
               { word: t.homepage.linksWords[0], url: 'https://t.me/montaanaq' },
-              { word: t.homepage.linksWords[1], url: 'mailto:amirnurislamov123@gmail.com' }
+              {
+                word: t.homepage.linksWords[1],
+                url: 'mailto:amirnurislamov123@gmail.com'
+              }
             ]}
             className={styles.blurred_text}
           />

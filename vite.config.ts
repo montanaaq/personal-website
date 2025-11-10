@@ -11,7 +11,7 @@ export default defineConfig({
         manualChunks: {
           // Разделяем vendor библиотеки
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'motion-vendor': ['motion/react'],
+          'motion-vendor': ['motion/react']
         }
       }
     },
@@ -19,7 +19,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     // Оптимизация
     cssCodeSplit: true,
-    sourcemap: false,
+    sourcemap: false
   },
   // Оптимизация зависимостей
   optimizeDeps: {
