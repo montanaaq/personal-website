@@ -1,0 +1,29 @@
+# robots.txt for Montana — Personal Website
+# Last updated: 2025-11-10
+
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap (если используешь Netlify — добавь реальный URL)
+Sitemap: https://montaanaq.netlify.app/sitemap.xml
+
+# Указание на главный домен
+Host: https://montaanaq.netlify.app
+
+# Неиндексируемые технические страницы (если есть роуты вроде /404, /info, /projects)
+Disallow: /404
+Disallow: /error
+
+# Правила для некоторых ботов
+User-agent: Googlebot-Image
+Allow: /images/
+Disallow: /tmp/
+
+User-agent: Bingbot
+Allow: /
+
+# Конец файла
