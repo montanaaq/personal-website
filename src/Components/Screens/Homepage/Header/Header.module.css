@@ -1,87 +1,63 @@
 .header {
   font-weight: 500;
-  font-size: 1.25rem; /* 24px / 16px = 1.5rem */
+  font-size: 1.25rem;
   display: flex;
   width: 100%;
   height: var(--header-height);
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   z-index: 10001 !important;
-  background: rgba(var(--bg-color-rgb), 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
   transition: all 0.3s ease;
-}
-
-.header.scrolled {
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Анимация для градиентной линии */
-.header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--secondary),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.header.scrolled::before {
-  opacity: 1;
-}
-
-.header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  background-size: 200% 100%;
-  overflow: hidden;
-  animation: running-gradient 3s linear forwards;
+  padding: 20px 0;
 }
 
 .header .wrapper {
-  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  /* Floating island styles */
+  background: rgba(var(--bg-color), 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 12px 32px;
+  box-shadow:
+    0px 4px 24px rgba(0, 0, 0, 0.15),
+    0px 8px 48px rgba(0, 0, 0, 0.1),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.header .right_wrapper {
+.header.scrolled .wrapper {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow:
+    0px 6px 32px rgba(0, 0, 0, 0.2),
+    0px 12px 56px rgba(0, 0, 0, 0.15),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.wrapper div {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.header_text a {
-  color: var(--secondary);
+  gap: 8px;
 }
 
 .name {
@@ -89,15 +65,16 @@
   text-decoration: none;
   font-weight: 500;
   transition: 0.2s;
-  margin-right: 10px;
   letter-spacing: 0.85px;
+  white-space: nowrap;
 }
+
 .name:hover {
   opacity: 0.8;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.084);
 }
+
 .toggle_light_mode {
-  margin-top: 3px;
   color: var(--text-color);
   background-color: transparent;
   display: flex;
@@ -130,48 +107,50 @@
   cursor: pointer;
   outline: none;
   transition: 0.2s ease-in-out;
-  font-size: 1rem; /* 18px / 16px = 1.125rem */
+  font-size: 1rem;
   font-weight: 500;
-  opacity: 0.8;
   border-radius: 8px;
   padding: 8px 12px;
+  white-space: nowrap;
 }
 
 .language_toggle:hover {
   opacity: 1;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .header .wrapper {
-    width: auto;
-    gap: 10px;
-    padding: 0 15px;
+    gap: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    padding: 10px 0;
   }
 
-  .header .right_wrapper {
-    gap: 10px;
-    padding: 0 15px;
+  .header .wrapper {
+    max-width: calc(100% - 20px);
+    gap: 20px;
+    padding: 10px 24px;
+    border-radius: 40px;
+  }
+
+  .wrapper div {
+    gap: 6px;
   }
 
   .name {
-    font-size: 1.125rem; /* 18px / 16px = 1.125rem */
-    margin-left: 0;
-    margin-right: 5px;
+    font-size: 1rem;
     letter-spacing: 0.5px;
   }
 
   .toggle_light_mode {
     padding: 6px;
-    margin-top: 0;
   }
 
   .language_toggle {
-    font-size: 0.75rem; /* 12px / 16px = 0.75rem */
-    padding: 6px 8px;
-  }
-
-  /* Скрываем hidden элементы на мобильных */
-  .header h1[style*='opacity: 0'] {
-    display: none;
+    font-size: 0.875rem;
+    padding: 6px 10px;
   }
 }
