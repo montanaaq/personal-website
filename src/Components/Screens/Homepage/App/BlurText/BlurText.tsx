@@ -58,13 +58,11 @@ const BlurText: React.FC<BlurTextProps> = ({
 }) => {
   const navigate = useNavigate()
 
-  // Мемоизируем разбиение текста
   const elements = useMemo(
     () => (animateBy === 'words' ? text.split(' ') : text.split('')),
     [text, animateBy]
   )
 
-  // Мемоизируем дефолтные анимации
   const defaultFrom = useMemo(
     () =>
       direction === 'top'
@@ -88,7 +86,6 @@ const BlurText: React.FC<BlurTextProps> = ({
   const fromSnapshot = animationFrom ?? defaultFrom
   const toSnapshots = animationTo ?? defaultTo
 
-  // Мемоизируем расчеты анимации
   const { totalDuration, times } = useMemo(() => {
     const stepCount = toSnapshots.length + 1
     const duration = stepDuration * (stepCount - 1)
@@ -98,7 +95,6 @@ const BlurText: React.FC<BlurTextProps> = ({
     return { totalDuration: duration, times: timeArray }
   }, [toSnapshots.length, stepDuration])
 
-  // Функция для поиска ссылки для слова
   const findLinkForWord = (word: string) => {
     const linkConfig = links.find(
       link => link.word.toLowerCase() === word.toLowerCase()
@@ -125,7 +121,6 @@ const BlurText: React.FC<BlurTextProps> = ({
     navigate(url)
   }
 
-  // Мемоизируем keyframes
   const animateKeyframes = useMemo(
     () => buildKeyframes(fromSnapshot, toSnapshots),
     [fromSnapshot, toSnapshots]
@@ -163,7 +158,7 @@ const BlurText: React.FC<BlurTextProps> = ({
               <a
                 href={linkUrl}
                 onClick={handleLinkClick(linkUrl)}
-                target={linkUrl.startsWith('http') ? '_blank' : undefined}
+                target={linkUrl.startsWith('http') || linkUrl.startsWith('https') ? '_blank' : undefined}
                 rel={
                   linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined
                 }

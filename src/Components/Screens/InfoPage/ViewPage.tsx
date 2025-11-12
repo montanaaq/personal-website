@@ -1,9 +1,14 @@
-import { motion as m } from 'motion/react'
-import { FC } from 'react'
-import { useLanguage } from '../../../hooks/useLanguage'
-import { useProjectsList } from '../../../data/Projects/ProjectsListLocalized'
-import Footer from '../Homepage/Footer/Footer'
-import styles from './Info.module.css'
+import { FC } from 'react';
+
+import { motion as m } from 'motion/react';
+
+import Footer from '../Homepage/Footer/Footer';
+
+import { useProjectsList } from '../../../data/Projects/ProjectsListLocalized';
+
+import { useLanguage } from '../../../hooks/useLanguage';
+
+import styles from './Info.module.css';
 
 const ViewPage: FC = () => {
   const today = new Date()

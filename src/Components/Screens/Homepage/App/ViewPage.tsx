@@ -50,7 +50,7 @@ const ViewPage: FC = () => {
             text={t.homepage.links}
             delay={150}
             animateBy="words"
-            direction="top"
+            direction="bottom"
             links={[
               { word: t.homepage.linksWords[0], url: 'https://t.me/montaanaq' },
               {

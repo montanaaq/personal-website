@@ -28,7 +28,6 @@ root.render(
             style: {
               minHeight: '40px',
               padding: '12px 16px',
-              fontSize: '12px',
               lineHeight: '1.3'
             }
           }}

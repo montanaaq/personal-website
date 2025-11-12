@@ -1,6 +1,5 @@
 import { lazy, ComponentType } from 'react'
 
-// Ленивая загрузка компонентов
 const App = lazy(() => import('../Components/Screens/Homepage/App/App'))
 const InfoPage = lazy(() => import('../Components/Screens/InfoPage/Info'))
 const IdePage = lazy(() => import('../Components/Screens/IDEPage/IdePage'))

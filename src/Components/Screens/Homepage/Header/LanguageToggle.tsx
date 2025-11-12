@@ -1,7 +1,10 @@
-import { FC } from 'react'
-import { motion } from 'motion/react'
-import { useLanguage } from '../../../../hooks/useLanguage'
-import styles from './Header.module.css'
+import { FC } from 'react';
+
+import { m } from 'motion/react';
+
+import { useLanguage } from '../../../../hooks/useLanguage';
+
+import styles from './Header.module.css';
 
 const LanguageToggle: FC = () => {
   const { language, setLanguage } = useLanguage()
@@ -12,7 +15,7 @@ const LanguageToggle: FC = () => {
   }
 
   return (
-    <motion.button
+    <m.button
       onClick={toggleLanguage}
       className={styles.language_toggle}
       whileHover={{
@@ -23,7 +26,7 @@ const LanguageToggle: FC = () => {
       transition={{ type: 'spring', stiffness: 400, damping: 10 }}
     >
       {language === 'ru' ? 'EN' : 'RU'}
-    </motion.button>
+    </m.button>
   )
 }
 
