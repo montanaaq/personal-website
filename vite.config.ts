@@ -5,24 +5,27 @@ export default defineConfig({
   plugins: [react()],
   build: {
     minify: 'esbuild',
-    // Разделение кода
     rollupOptions: {
       output: {
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
         manualChunks: {
-          // Разделяем vendor библиотеки
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'motion-vendor': ['motion/react']
         }
       }
     },
-    // Увеличиваем лимит предупреждений
     chunkSizeWarningLimit: 1000,
-    // Оптимизация
     cssCodeSplit: true,
     sourcemap: false
   },
-  // Оптимизация зависимостей
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'motion/react']
+  },
+  server: {
+    fs: {
+      strict: false
+    }
   }
 })

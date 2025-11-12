@@ -8,10 +8,37 @@
   publish = "dist"  
 
 [build.environment]
-  NODE_VERSION = "18" # Use Node.js for compatibility
+  NODE_VERSION = "18"
   BUN_VERSION = "latest"
 
+# CRITICAL: JavaScript modules need correct MIME type
 [[headers]]
-  for = "/*"
+  for = "/assets/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, must-revalidate"
+    Content-Type = "application/javascript; charset=utf-8"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=utf-8"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# CSS files
+[[headers]]
+  for = "/assets/*.css"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML files - must NOT be cached aggressively
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Other assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
