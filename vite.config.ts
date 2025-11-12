@@ -12,7 +12,8 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]',
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'motion-vendor': ['motion/react']
+          'motion-vendor': ['motion/react'],
+          'ogl-vendor': ['ogl'] // Separate OGL into its own chunk
         }
       }
     },
@@ -21,11 +22,9 @@ export default defineConfig({
     sourcemap: false
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'motion/react']
+    include: ['react', 'react-dom', 'react-router-dom', 'motion/react', 'ogl']
   },
-  server: {
-    fs: {
-      strict: false
-    }
+  resolve: {
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
   }
 })
