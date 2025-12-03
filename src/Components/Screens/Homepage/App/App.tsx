@@ -1,5 +1,4 @@
 import type { FC } from 'react'
-import Snowfall from 'react-snowfall' // only on christmas ☃️
 import useIsChristmas from '../../../../hooks/useIsChristmas.ts'
 import useIsDesktop from '../../../../hooks/useIsDesktop.ts'
 import Circles from '../../../Backgrounds/Circles/Circles.tsx'
@@ -11,23 +10,18 @@ const App: FC = () => {
   const isChristmas = useIsChristmas()
   const showCircles = !isDesktop && !isChristmas
 
-  const content = (
-    <>
-      <ViewPage />
-      {isChristmas && <Snowfall />}
-    </>
-  )
-
   return (
     <div className="App">
       {isDesktop ? (
         <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
-          {content}
+          <ViewPage />
         </div>
       ) : showCircles ? (
-        <Circles>{content}</Circles>
+        <Circles>
+          <ViewPage />
+        </Circles>
       ) : (
-        content
+        <ViewPage />
       )}
     </div>
   )

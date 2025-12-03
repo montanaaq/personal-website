@@ -2,7 +2,7 @@ import { motion as m } from 'motion/react'
 import type { FC } from 'react'
 import { useProjectsList } from '../../../data/Projects/ProjectsListLocalized'
 import { useLanguage } from '../../../hooks/useLanguage'
-
+import Footer from '../Homepage/Footer/Footer'
 import styles from './Info.module.css'
 
 const ViewPage: FC = () => {
@@ -131,6 +131,7 @@ const ViewPage: FC = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
