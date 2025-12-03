@@ -184,7 +184,7 @@ const BlurText: React.FC<BlurTextProps> = ({
                 }
                 style={{
                   textDecoration: 'underline',
-                  color: 'inherit',
+                  color: 'var(--secondary)',
                   cursor: 'pointer',
                   transition: 'opacity 0.2s'
                 }}
