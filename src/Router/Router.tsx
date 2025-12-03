@@ -1,17 +1,18 @@
-import { FC, Suspense } from 'react';
+import { type FC, Suspense } from 'react'
 
-import { Route, Routes } from 'react-router-dom';
-
-import { routes } from './Routes';
-import LoadingFallback from './LoadingFallback';
+import { Route, Routes } from 'react-router-dom'
+import LoadingFallback from './LoadingFallback'
+import { routes } from './Routes'
 
 const Router: FC = () => {
   return (
     <Suspense fallback={<LoadingFallback />}>
       <Routes>
-        {routes.map((route, index) => {
+        {routes.map(route => {
           const { Component } = route
-          return <Route key={index} path={route.path} element={<Component />} />
+          return (
+            <Route key={route.path} path={route.path} element={<Component />} />
+          )
         })}
       </Routes>
     </Suspense>

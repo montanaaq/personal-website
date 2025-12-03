@@ -1,13 +1,13 @@
-import { useState, FC } from 'react';
+import { useState, type FC } from 'react'
 
-import { toast } from 'sonner';
-import { m } from 'motion/react';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
+import { toast } from 'sonner'
+import { m } from 'motion/react'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
 
-import { useLanguage } from '../../../../hooks/useLanguage';
+import { useLanguage } from '../../../../hooks/useLanguage'
 
-import styles from './Header.module.css';
+import styles from './Header.module.css'
 
 const LightModeToggle: FC = () => {
   const [lightMode, setLightMode] = useState(false)

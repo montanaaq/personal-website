@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import { FC } from 'react'
+import type { FC } from 'react'
 import styles from './MusicPage.module.css'
 
 interface ICard {
@@ -19,7 +19,7 @@ const Card: FC<ICard> = ({ id, name, img, best, alt, link, duration }) => {
         <img src={img} alt={alt} key={`img_new_${id}`} />
       </div>
       <h2
-        className={name == "Primus - They Can't All Be Zingers" ? 'small' : ''}
+        className={name === "Primus - They Can't All Be Zingers" ? 'small' : ''}
         key={`name_${id}`}
       >
         {name}

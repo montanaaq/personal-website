@@ -36,23 +36,22 @@
   padding: 10px;
 }
 
-.social_links a:hover {
-  .link_text {
-    opacity: 1;
-    transform: translateY(5px);
-    color: color-mix(in srgb, var(--text-color) 80%, black 20%);
-  }
-}
-
-.link_text {
-  font-size: 0.825rem !important;
+.social_links a .link_text {
+  font-size: 0.825rem;
   color: white;
-  text-decoration: none !important;
+  text-decoration: none;
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
 
+.social_links a:hover .link_text {
+  opacity: 1;
+  transform: translateY(5px);
+  color: color-mix(in srgb, var(--text-color) 80%, black 20%);
+}
+
 @media (hover: none) {
+  .social_links a,
   .social_links a .link_text {
     opacity: 1;
   }
@@ -62,10 +61,12 @@
   .social_links {
     padding-top: 8px;
     gap: 15px;
-    a {
-      gap: 0;
-    }
   }
+
+  .social_links a {
+    gap: 0;
+  }
+
   .toggle-dark-mode {
     font-size: 18px;
   }

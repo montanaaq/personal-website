@@ -1,14 +1,10 @@
-import { FC } from 'react';
+import { motion as m } from 'motion/react'
+import type { FC } from 'react'
+import { useProjectsList } from '../../../data/Projects/ProjectsListLocalized'
+import { useLanguage } from '../../../hooks/useLanguage'
+import Footer from '../Homepage/Footer/Footer'
 
-import { motion as m } from 'motion/react';
-
-import Footer from '../Homepage/Footer/Footer';
-
-import { useProjectsList } from '../../../data/Projects/ProjectsListLocalized';
-
-import { useLanguage } from '../../../hooks/useLanguage';
-
-import styles from './Info.module.css';
+import styles from './Info.module.css'
 
 const ViewPage: FC = () => {
   const today = new Date()
@@ -31,8 +27,6 @@ const ViewPage: FC = () => {
       <div className={styles.main_post}>
         <header style={{ margin: '20px 0px 40px 0px' }}>
           <h1 style={{ fontSize: '2.375rem', fontWeight: 600 }}>
-            {' '}
-            {/* 38px / 16px = 2.375rem */}
             {t.info.title}{' '}
             <span style={{ color: 'var(--secondary)' }}>
               {t.info.titleHighlight}
@@ -111,7 +105,7 @@ const ViewPage: FC = () => {
                   </a>
                 </div>
               )}
-              {el.source_code ? (
+              {el.source_code && (
                 <div style={{ marginTop: '5px' }}>
                   <a
                     href={el.source_code}
@@ -124,25 +118,11 @@ const ViewPage: FC = () => {
                     {t.info.sourceCode}
                   </a>
                 </div>
-              ) : (
-                ''
               )}
               <m.img
                 src={el.img}
                 alt="not downloaded"
-                className={
-                  el.url === 'sneaknews'
-                    ? `${styles.sneaknews_img}`
-                    : el.url === 'uni_finder_website'
-                      ? `${styles.uni_finder_website_img}`
-                      : el.url === 'my_website'
-                        ? `${styles.profile_website_img}`
-                        : el.url === 'schedulebot'
-                          ? `${styles.schedulebot_img}`
-                          : el.url === 'desks_duels'
-                            ? `${styles.desks_duels_img}`
-                            : ''
-                }
+                className={el.imageClassName ? styles[el.imageClassName] : ''}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}

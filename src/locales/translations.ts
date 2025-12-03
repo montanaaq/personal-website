@@ -100,6 +100,11 @@ export interface Translations {
       description: string
       date: string
     }
+    alfaEcosystem: {
+      name: string
+      description: string
+      date: string
+    }
   }
 
   // Music Albums
@@ -256,6 +261,12 @@ export const translations: Record<string, Translations> = {
         description:
           'Бот и сайт в телеграм, с помощью которого можно сразиться за право на место в вашем школьном классе!',
         date: 'декабрь 2024'
+      },
+      alfaEcosystem: {
+        name: 'Сайт с новостями',
+        description:
+          'Веб-приложение для удобного просмотра новостей из различных источников в одном месте, с фильтрацией и поиском по категориям.',
+        date: 'январь 2024'
       }
     },
     musicAlbums: {
@@ -408,6 +419,12 @@ export const translations: Record<string, Translations> = {
         description:
           'A Telegram bot and website where you can battle for the right to a seat in your school class!',
         date: 'December 2024'
+      },
+      alfaEcosystem: {
+        name: 'News Website',
+        description:
+          'A web application for convenient viewing of news from various sources in one place, with filtering and searching by categories.',
+        date: 'January 2024'
       }
     },
     musicAlbums: {

@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import type { FC } from 'react'
 
-import { m } from 'motion/react';
+import { m } from 'motion/react'
 
-import { useLanguage } from '../../../../hooks/useLanguage';
+import { useLanguage } from '../../../../hooks/useLanguage'
 
-import styles from './Header.module.css';
+import styles from './Header.module.css'
 
 const LanguageToggle: FC = () => {
   const { language, setLanguage } = useLanguage()

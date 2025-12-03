@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import { useLanguage } from '../../../hooks/useLanguage'
+import Footer from '../Homepage/Footer/Footer'
 import Edit from './Edit'
 import styles from './IDEPage.module.css'
-import Footer from '../Homepage/Footer/Footer'
 
 const ViewPage: FC = () => {
   const { t } = useLanguage()

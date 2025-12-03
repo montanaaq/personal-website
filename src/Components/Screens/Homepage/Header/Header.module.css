@@ -7,11 +7,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 10001 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10001;
   background: transparent;
   transition: all 0.3s ease;
   padding: 20px 0;
@@ -67,11 +67,6 @@
   transition: 0.2s;
   letter-spacing: 0.85px;
   white-space: nowrap;
-}
-
-.name:hover {
-  opacity: 0.8;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.084);
 }
 
 .toggle_light_mode {

@@ -1,5 +1,6 @@
-import { FC } from 'react'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import Button from '@mui/material/Button/Button'
+import type { FC } from 'react'
 import { useRef } from 'react'
 import styles from './IDEPage.module.css'
 
@@ -71,10 +72,10 @@ const Edit: FC<EditProps> = ({
           ref={pRef}
           dangerouslySetInnerHTML={{ __html: mainInfo }}
         ></pre>
-        <button onClick={copyToClipboard} className={styles.copy_button}>
+        <Button onClick={copyToClipboard} className={styles.copy_button}>
           <ContentCopyIcon fontSize="small" />
           Copy
-        </button>
+        </Button>
         {addInfo ? <b>{addInfo}</b> : ''}
       </div>
     </>

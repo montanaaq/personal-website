@@ -1,7 +1,5 @@
-/* eslint-disable */
-
-import { useMemo } from 'react'
 import { motion as m } from 'motion/react'
+import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 type LinkConfig = {
@@ -121,14 +119,32 @@ const BlurText: React.FC<BlurTextProps> = ({
     navigate(url)
   }
 
+  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.style.opacity = '0.7'
+  }
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.style.opacity = '1'
+  }
+
   const animateKeyframes = useMemo(
     () => buildKeyframes(fromSnapshot, toSnapshots),
     [fromSnapshot, toSnapshots]
   )
 
+  const elementsWithIds = useMemo(
+    () =>
+      elements.map((segment, idx) => ({
+        id: `${segment}-${idx}-${Math.random().toString(36).substr(2, 9)}`,
+        segment,
+        index: idx
+      })),
+    [elements]
+  )
+
   return (
     <p className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
-      {elements.map((segment, index) => {
+      {elementsWithIds.map(({ id, segment, index }) => {
         const linkUrl = findLinkForWord(segment)
 
         const spanTransition = {
@@ -142,7 +158,7 @@ const BlurText: React.FC<BlurTextProps> = ({
 
         return (
           <m.span
-            key={index}
+            key={id}
             initial={fromSnapshot}
             animate={animateKeyframes}
             transition={spanTransition}
@@ -158,7 +174,11 @@ const BlurText: React.FC<BlurTextProps> = ({
               <a
                 href={linkUrl}
                 onClick={handleLinkClick(linkUrl)}
-                target={linkUrl.startsWith('http') || linkUrl.startsWith('https') ? '_blank' : undefined}
+                target={
+                  linkUrl.startsWith('http') || linkUrl.startsWith('https')
+                    ? '_blank'
+                    : undefined
+                }
                 rel={
                   linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined
                 }
@@ -168,8 +188,8 @@ const BlurText: React.FC<BlurTextProps> = ({
                   cursor: 'pointer',
                   transition: 'opacity 0.2s'
                 }}
-                onMouseEnter={e => (e.currentTarget.style.opacity = '0.7')}
-                onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 {content}
               </a>

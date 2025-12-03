@@ -1,4 +1,4 @@
-import { FC } from "react"
+import type { FC } from 'react'
 
 const LoadingFallback: FC = () => (
   <div
@@ -32,4 +32,4 @@ const LoadingFallback: FC = () => (
   </div>
 )
 
-export default LoadingFallback;
+export default LoadingFallback

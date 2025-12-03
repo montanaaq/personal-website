@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC } from 'react'
 import Circles from '../../Backgrounds/Circles/Circles'
 import ViewPage from './ViewPage'
 

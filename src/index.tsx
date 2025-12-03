@@ -1,20 +1,17 @@
-import React from 'react'
-
-import { Toaster } from 'sonner'
+import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-
-import Router from './Router/Router'
-
+import { Toaster } from 'sonner'
 import { LanguageProvider } from './contexts/LanguageContext'
+import Router from './Router/Router'
 
 import './index.css'
 
 import Header from './Components/Screens/Homepage/Header/Header'
 
-const root = ReactDOM.createRoot(document.getElementById('root')!)
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <BrowserRouter>
       <LanguageProvider>
         <Header />
@@ -34,5 +31,5 @@ root.render(
         />
       </LanguageProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </StrictMode>
 )

@@ -1,14 +1,10 @@
-import { FC, useState } from 'react'
-
 import { motion as m } from 'motion/react'
-
-import BlurText from './BlurText/BlurText'
-
-import Footer from '../Footer/Footer'
-
+import { type FC, useState } from 'react'
 import { useLanguage } from '../../../../hooks/useLanguage'
 
+import Footer from '../Footer/Footer'
 import styles from './App.module.css'
+import BlurText from './BlurText/BlurText'
 
 const ViewPage: FC = () => {
   const [showSecondMessage, setShowSecondMessage] = useState(false)
@@ -22,6 +18,20 @@ const ViewPage: FC = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
+      <div
+        style={{
+          position: 'absolute',
+          visibility: 'hidden',
+          pointerEvents: 'none',
+          fontSize: 'inherit',
+          fontFamily: 'inherit'
+        }}
+      >
+        <span>{t.homepage.welcome}</span>
+        <span>{t.homepage.projects}</span>
+        <span>{t.homepage.links}</span>
+      </div>
+
       <m.div className={styles.info_container}>
         <BlurText
           text={t.homepage.welcome}

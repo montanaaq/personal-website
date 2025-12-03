@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import type { FC } from 'react'
 
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom'
 
-import styles from './Footer.module.css';
+import styles from './Footer.module.css'
 
 const Footer: FC = () => {
   const location = useLocation()

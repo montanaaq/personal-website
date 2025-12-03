@@ -1,8 +1,8 @@
 // File: src/contexts/LanguageContext.tsx
 import type { FC } from 'react'
-import { createContext, ReactNode, useState } from 'react'
+import { createContext, type ReactNode, useState } from 'react'
 
-import { translations, Translations } from '../locales/translations'
+import { translations, type Translations } from '../locales/translations'
 
 type Language = 'en' | 'ru'
 

@@ -19,48 +19,42 @@
 .post_content
   img:not(.sneaknews_img):not(.uni_finder_website_img):not(
     .profile_website_img
-  ):not(.schedulebot_img):not(.desks_duels_img) {
+  ):not(.schedulebot_img):not(.desks_duels_img):not(.alfa_ecosystem_img) {
   width: 350px;
   height: 350px;
+}
+.post_content img {
   border-radius: 15px;
   margin-bottom: 50px;
   margin-top: 15px;
 }
+
 .sneaknews_img {
   width: 400px;
   height: 700px;
-  border-radius: 15px;
-  margin-bottom: 50px;
-  margin-top: 15px;
 }
 .uni_finder_website_img {
   width: 600px;
   height: 400px;
-  border-radius: 15px;
-  margin-bottom: 50px;
-  margin-top: 15px;
 }
 .profile_website_img {
-  width: 400px;
-  height: 475px;
+  width: 501.6px;
+  height: 420px;
   border: 0.1px solid var(--text-color);
   margin-top: 10px;
-  border-radius: 15px;
   margin-bottom: 20px;
 }
 .schedulebot_img {
   width: 540px;
   height: 416px;
-  border-radius: 15px;
-  margin-bottom: 50px;
-  margin-top: 15px;
 }
 .desks_duels_img {
   width: 300px;
   height: 650px;
-  border-radius: 15px;
-  margin-bottom: 50px;
-  margin-top: 15px;
+}
+.alfa_ecosystem_img {
+  width: 540px;
+  height: 369px;
 }
 .container h2 {
   word-break: keep-all;
@@ -117,7 +111,7 @@ a:not(.footer_span) {
   .post_content
     img:not(.sneaknews_img):not(.uni_finder_website_img):not(
       .profile_website_img
-    ):not(.schedulebot_img):not(.desks_duels_img) {
+    ):not(.schedulebot_img):not(.desks_duels_img):not(.alfa_ecosystem_img) {
     width: 280px;
     height: 280px;
   }
@@ -133,8 +127,8 @@ a:not(.footer_span) {
   }
 
   .profile_website_img {
-    width: 300px;
-    height: 356px;
+    width: 337.4px;
+    height: 280px;
   }
 
   .schedulebot_img {
@@ -145,5 +139,10 @@ a:not(.footer_span) {
   .desks_duels_img {
     width: 250px;
     height: 542px;
+  }
+
+  .alfa_ecosystem_img {
+    width: 380px;
+    height: 260px;
   }
 }

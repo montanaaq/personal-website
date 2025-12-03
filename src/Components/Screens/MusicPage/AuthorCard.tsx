@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import { FC } from 'react'
+import type { FC } from 'react'
 import styles from './MusicPage.module.css'
 
 type AuthorCardProps = {

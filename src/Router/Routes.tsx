@@ -1,4 +1,4 @@
-import { lazy, ComponentType } from 'react'
+import { lazy, type ComponentType } from 'react'
 
 const App = lazy(() => import('../Components/Screens/Homepage/App/App'))
 const InfoPage = lazy(() => import('../Components/Screens/InfoPage/Info'))
