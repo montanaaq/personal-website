@@ -1,5 +1,5 @@
-import { useRef, useEffect } from 'react'
-import { Renderer, Program, Mesh, Triangle, Vec2 } from 'ogl'
+import { Mesh, Program, Renderer, Triangle, Vec2 } from 'ogl'
+import { useEffect, useRef } from 'react'
 import './DarkVeils.css'
 
 const vertex = `
