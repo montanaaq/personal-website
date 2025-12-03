@@ -9,21 +9,28 @@ import ViewPage from './ViewPage.tsx'
 const App: FC = () => {
   const isDesktop = useIsDesktop()
   const isChristmas = useIsChristmas()
+  const showCircles = !isDesktop && !isChristmas
+
+  const content = (
+    <>
+      <ViewPage />
+      {isChristmas && <Snowfall />}
+    </>
+  )
 
   return (
     <div className="App">
       {isDesktop ? (
         <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
-          {/* <DarkVeils /> */}
-          <ViewPage />
-          {isChristmas && <Snowfall snowflakeCount={150} />}
+          {content}
         </div>
+      ) : showCircles ? (
+        <Circles>{content}</Circles>
       ) : (
-        <Circles>
-          <ViewPage />
-        </Circles>
+        content
       )}
     </div>
   )
 }
+
 export default App

@@ -37,7 +37,7 @@
 
 /* Планшеты (768px - 1024px) */
 @media only screen and (max-width: 1024px) {
-  .info_container {
+  .main .info_container {
     align-items: center;
   }
   .blurred_text {

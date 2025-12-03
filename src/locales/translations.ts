@@ -55,6 +55,14 @@ export interface Translations {
     themesList: string
   }
 
+  // 404 Page
+  notFound: {
+    errorCode: string
+    title: string
+    description: string
+    homeButton: string
+  }
+
   // Buttons
   buttons: {
     projects: string
@@ -216,6 +224,13 @@ export const translations: Record<string, Translations> = {
         'Конечно же у меня есть очень много тем, которые также являются расширениями. Вот небольшой список моих любимых:',
       themesList: 'Themes, Andromeda, Eva Theme, Horizon Theme, Material Theme'
     },
+    notFound: {
+      errorCode: '404',
+      title: 'Страница не найдена',
+      description:
+        'Страница, которую вы ищете, не существует или была перемещена.',
+      homeButton: 'Вернуться на главную'
+    },
     buttons: {
       projects: 'Проекты',
       music: 'Музыка',
@@ -373,6 +388,13 @@ export const translations: Record<string, Translations> = {
         "Of course, I have many themes that are also extensions. Here's a small list of my favorites:",
       themesList:
         'Catpuccin Themes, Andromeda, Eva Theme, Horizon Theme, Material Theme'
+    },
+    notFound: {
+      errorCode: '404',
+      title: 'Page Not Found',
+      description:
+        "The page you're looking for doesn't exist or has been moved.",
+      homeButton: 'Go Back Home'
     },
     buttons: {
       projects: 'Projects',
