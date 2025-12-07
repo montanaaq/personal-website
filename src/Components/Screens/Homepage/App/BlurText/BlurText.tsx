@@ -1,6 +1,6 @@
 import { motion as m } from 'motion/react'
 import { useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router'
 
 type LinkConfig = {
   word: string

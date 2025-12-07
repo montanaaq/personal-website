@@ -1,6 +1,6 @@
 import { motion as m } from 'motion/react'
 import type { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import { useLanguage } from '../../hooks/useLanguage'
 import styles from './NotFoundPage.module.css'
 
