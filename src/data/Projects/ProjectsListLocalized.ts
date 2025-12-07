@@ -100,7 +100,7 @@ export const useProjectsList = (): IProjectsList[] => {
       p: t.projects.alfaEcosystem.description,
       url: 'alfa_ecosystem',
       img: 'assets/img/alfa_ecosystem.webp',
-      main_name: 'Alfa Ecosystem',
+      main_name: 'News SPA Webapp',
       date: t.projects.alfaEcosystem.date,
       isSupport: false,
       source_code: 'https://github.com/montanaaq/alfa-ecosystem-task',

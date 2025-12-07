@@ -2,6 +2,14 @@
   "name": "personal-website",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "knip": "knip",
+    "format": "biome format --write",
+    "lint": "biome lint"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -12,20 +20,12 @@
     "caniuse-lite": "^1.0.30001757",
     "motion": "^11.13.5",
     "ogl": "^1.0.11",
-    "react": "^18.2.0",
+    "react": "19.2.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.1",
     "react-snowfall": "^2.1.0",
     "sonner": "^1.5.0",
-    "vite": "^5.4.14"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "knip": "knip",
-    "format": "biome format --write",
-    "lint": "biome lint"
+    "vite": "npm:rolldown-vite@latest"
   },
   "browserslist": {
     "production": [

@@ -258,7 +258,7 @@ export const translations: Record<string, Translations> = {
         name: 'News Website',
         description:
           'A web application for convenient viewing of news from various sources in one place, with filtering and searching by categories.',
-        date: 'January 2024'
+        date: 'November 2025'
       }
     }
   }

@@ -22,7 +22,7 @@ export default defineConfig({
     sourcemap: false
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'motion/react', 'ogl']
+    include: ['react', 'react-dom', 'react-router-dom', 'motion/react', 'ogl'],
   },
   resolve: {
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
