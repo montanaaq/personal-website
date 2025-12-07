@@ -3,7 +3,7 @@
   publish = "dist"  
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20.19.0"
   BUN_VERSION = "latest"
 
 # JavaScript modules - MUST come first and be specific
