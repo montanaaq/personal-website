@@ -1,19 +1,19 @@
 import { motion as m } from 'motion/react'
 import type { FC } from 'react'
-import { useProjectsList } from '@/data/Projects/ProjectsListLocalized'
-import { useLanguage } from '@/hooks/useLanguage'
+import { useProjectsList } from '../../../data/Projects/ProjectsListLocalized'
+import { useLanguage } from '../../../hooks/useLanguage'
 import Footer from '../Homepage/Footer/Footer'
 import styles from './Info.module.css'
-
-const languageMap: Record<string, string> = {
-  en: 'en-US',
-  ru: 'ru-RU'
-}
 
 const ViewPage: FC = () => {
   const today = new Date()
   const { t, language } = useLanguage()
   const ProjectsList = useProjectsList()
+
+  const languageMap: Record<string, string> = {
+    en: 'en-US',
+    ru: 'ru-RU'
+  }
 
   const formattedDate = new Intl.DateTimeFormat(languageMap[language], {
     year: 'numeric',

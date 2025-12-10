@@ -1,7 +1,8 @@
-import { m } from 'motion/react'
 import type { FC } from 'react'
 
-import { useLanguage } from '@/hooks/useLanguage'
+import { m } from 'motion/react'
+
+import { useLanguage } from '../../../../hooks/useLanguage'
 
 import styles from './Header.module.css'
 
