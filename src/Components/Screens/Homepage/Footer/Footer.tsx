@@ -1,7 +1,5 @@
 import type { FC } from 'react'
-
 import { useLocation } from 'react-router'
-
 import styles from './Footer.module.css'
 
 const Footer: FC = () => {

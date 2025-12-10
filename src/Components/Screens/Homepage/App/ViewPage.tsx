@@ -1,6 +1,6 @@
 import { motion as m } from 'motion/react'
 import { type FC, useState } from 'react'
-import { useLanguage } from '../../../../hooks/useLanguage'
+import { useLanguage } from '@/hooks/useLanguage'
 
 import Footer from '../Footer/Footer'
 import styles from './App.module.css'
