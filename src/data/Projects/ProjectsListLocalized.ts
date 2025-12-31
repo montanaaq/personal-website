@@ -40,7 +40,7 @@ export const useProjectsList = (): IProjectsList[] => {
       img: 'assets/img/sneak_news_bot.webp',
       main_name: 'SneakNews Bot',
       date: t.projects.sneakNewsBot.date,
-      isSupport: true,
+      isSupport: false,
       link: 'http://t.me/sneaknews_bot',
       imageClassName: 'sneaknews_img'
     },

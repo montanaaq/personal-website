@@ -88,11 +88,11 @@
   }
 
   .blurred_text {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
 
   .blurred_text:nth-child(2) {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .blurred_text:nth-child(3) {
