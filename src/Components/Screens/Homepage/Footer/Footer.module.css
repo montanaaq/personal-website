@@ -26,6 +26,7 @@
 .footer a,
 .footer span {
   color: var(--text-color);
+  margin-left: 3px;
 }
 .footer a:hover {
   opacity: 0.8;

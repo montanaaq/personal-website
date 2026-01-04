@@ -18,20 +18,6 @@ const ViewPage: FC = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div
-        style={{
-          position: 'absolute',
-          visibility: 'hidden',
-          pointerEvents: 'none',
-          fontSize: 'inherit',
-          fontFamily: 'inherit'
-        }}
-      >
-        <span>{t.homepage.welcome}</span>
-        <span>{t.homepage.projects}</span>
-        <span>{t.homepage.links}</span>
-      </div>
-
       <m.div className={styles.info_container}>
         <BlurText
           text={t.homepage.welcome}

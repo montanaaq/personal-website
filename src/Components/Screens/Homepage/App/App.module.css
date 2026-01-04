@@ -11,46 +11,63 @@
 
 .main .info_container {
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
+  position: relative;
+  width: 100%;
   flex: 1;
   text-align: center;
   box-sizing: border-box;
 }
 
-.blurred_text {
+.blurred_text:nth-child(1) {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 2rem;
   line-height: 1.3;
+  width: 90%;
+  max-width: 800px;
 }
 
 .blurred_text:nth-child(2) {
+  position: absolute;
+  top: 35%;
+  left: 65%;
+  transform: translate(-50%, calc(-50% + 70px));
   font-size: 1.9rem;
+  line-height: 1.3;
+  width: 90%;
+  max-width: 800px;
 }
 
 .blurred_text:nth-child(3) {
+  position: absolute;
+  top: 35%;
+  left: 68%;
+  transform: translate(-50%, calc(-50% + 150px));
   font-size: 1.1rem;
-  margin-top: 100px;
+  line-height: 1.3;
+  width: 90%;
+  max-width: 800px;
 }
 
 /* Планшеты (768px - 1024px) */
 @media only screen and (max-width: 1024px) {
-  .main .info_container {
-    align-items: center;
-  }
-  .blurred_text {
-    font-size: 1.6rem;
+  .blurred_text:nth-child(1) {
+    font-size: 2rem;
+    left: 50%;
   }
 
   .blurred_text:nth-child(2) {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
+    transform: translate(-50%, calc(-50% + 80px));
+    left: 50%;
   }
 
   .blurred_text:nth-child(3) {
-    font-size: 1rem;
-    margin-top: 60px;
+    font-size: 1.8rem;
+    transform: translate(-50%, calc(-50% + 180px));
+    left: 50%;
   }
 }
 
@@ -61,21 +78,24 @@
     padding-top: calc(var(--header-height) + 15px);
   }
 
-  .main .info_container {
-    gap: 15px;
-  }
-
-  .blurred_text {
-    font-size: 1.4rem;
+  .blurred_text:nth-child(1) {
+    font-size: 1.9rem;
+    width: 95%;
+    left: 50%;
   }
 
   .blurred_text:nth-child(2) {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+    transform: translate(-50%, calc(-50% + 70px));
+    width: 95%;
+    left: 50%;
   }
 
   .blurred_text:nth-child(3) {
-    font-size: 0.95rem;
-    margin-top: 40px;
+    font-size: 1.4rem;
+    transform: translate(-50%, calc(-50% + 150px));
+    width: 95%;
+    left: 50%;
   }
 }
 
@@ -87,16 +107,23 @@
     max-width: calc(var(--main-width) + var(--gap) * 2);
   }
 
-  .blurred_text {
+  .blurred_text:nth-child(1) {
     font-size: 2.1rem;
+    width: 100%;
+    left: 50%;
   }
 
   .blurred_text:nth-child(2) {
     font-size: 2rem;
+    transform: translate(-50%, calc(-50% + 125px));
+    width: 100%;
+    left: 50%;
   }
 
   .blurred_text:nth-child(3) {
     font-size: 1.7rem;
-    margin-top: 30px;
+    transform: translate(-50%, calc(-50% + 250px));
+    width: 100%;
+    left: 50%;
   }
 }

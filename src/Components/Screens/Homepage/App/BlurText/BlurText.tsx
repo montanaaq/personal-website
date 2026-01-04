@@ -183,7 +183,6 @@ const BlurText: React.FC<BlurTextProps> = ({
                   linkUrl.startsWith('http') ? 'noopener noreferrer' : undefined
                 }
                 style={{
-                  textDecoration: 'underline',
                   color: 'var(--secondary)',
                   cursor: 'pointer',
                   transition: 'opacity 0.2s'

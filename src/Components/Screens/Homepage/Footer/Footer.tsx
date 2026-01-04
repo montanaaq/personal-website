@@ -11,14 +11,16 @@ const Footer: FC = () => {
     ? styles.footer
     : `${styles.footer} ${styles.fixed}`
 
+  const year = new Date().getFullYear()
+
   return (
     <footer className={footerClass}>
       <span style={{ opacity: '.6' }}>
-        © 2025&nbsp;
+        © {year}
         <a href="https://montaanaq.netlify.app" className={styles.footer_span}>
           Montana
         </a>
-        &nbsp;Powered by&nbsp;
+        &nbsp;Powered by
         <a
           href="https://react.dev/"
           target="_blank"
