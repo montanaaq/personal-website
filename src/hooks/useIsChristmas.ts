@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+const allowedMonths = [11, 0, 1]
+
 const useIsChristmas = (): boolean => {
   const [isChristmas, setIsChristmas] = useState(false)
 
@@ -7,11 +9,8 @@ const useIsChristmas = (): boolean => {
     const checkChristmasPeriod = () => {
       const now = new Date()
       const month = now.getMonth()
-      const day = now.getDate()
 
-      // December (month = 11) from day 1 onwards OR January (month = 0) day 1
-      const isInPeriod =
-        (month === 11 && day >= 1) || (month === 0 && day === 1)
+      const isInPeriod = allowedMonths.includes(month)
 
       setIsChristmas(isInPeriod)
     }
