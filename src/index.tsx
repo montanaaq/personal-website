@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
 import Snowfall from 'react-snowfall' // only on christmas ☃️
 import { Toaster } from 'sonner'
-import { LanguageProvider } from './contexts/LanguageContext'
-import Router from './router/Router'
+import { LanguageProvider } from './contexts/LanguageContext.tsx'
+import Router from './router/Router.tsx'
 
 import './index.css'
 
-import Header from './components/header/Header'
-import useIsChristmas from './hooks/useIsChristmas'
+import Header from './components/header/Header.tsx'
+import useIsChristmas from './hooks/useIsChristmas.ts'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
