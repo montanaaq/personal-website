@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
 import Snowfall from 'react-snowfall' // only on christmas ☃️
 import { Toaster } from 'sonner'
+import Router from './components/router/Router.tsx'
 import { LanguageProvider } from './contexts/LanguageContext.tsx'
-import Router from './router/Router.tsx'
 
 import './index.css'
 
