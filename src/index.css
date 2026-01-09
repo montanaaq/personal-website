@@ -161,7 +161,7 @@ li a:hover {
     transform: none;
     width: 100%;
     margin: 0;
-    overflow-x: hidden; /* Убираем горизонтальный скроллинг */
+    overflow-x: hidden;
     height: 100vh;
     overflow-y: hidden;
   }
