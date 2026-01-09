@@ -1,10 +1,10 @@
 import { type FC, useEffect, useState } from 'react'
 import { Link } from 'react-router'
 
-import { useLanguage } from '../../../../hooks/useLanguage.js'
+import { useLanguage } from '../../hooks/useLanguage.js'
 
 import styles from './Header.module.css'
-import LanguageToggle from './LanguageToggle'
+import LanguageToggle from './LanguageToggle.js'
 import LightModeToggle from './LightModeToggle.js'
 
 const Header: FC = () => {

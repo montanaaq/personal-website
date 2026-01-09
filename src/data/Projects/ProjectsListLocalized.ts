@@ -1,12 +1,11 @@
 import { useLanguage } from '../../hooks/useLanguage'
 
-interface IProjectsList {
+export type TProject = {
   id: number
   name: string
   p: string
   url: string
   img?: string
-  video?: string
   main_name: string
   date: string
   isSupport: boolean
@@ -15,7 +14,7 @@ interface IProjectsList {
   imageClassName?: string
 }
 
-export const useProjectsList = (): IProjectsList[] => {
+export const useProjectsList = (): TProject[] => {
   const { t } = useLanguage()
 
   return [

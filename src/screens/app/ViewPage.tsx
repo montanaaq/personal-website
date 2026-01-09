@@ -1,10 +1,9 @@
 import { motion as m } from 'motion/react'
 import { type FC, useState } from 'react'
-import { useLanguage } from '../../../../hooks/useLanguage'
-
-import Footer from '../Footer/Footer'
+import Footer from '../../components/footer/Footer'
+import BlurText from '../../components/ui/blur-text/BlurText'
+import { useLanguage } from '../../hooks/useLanguage'
 import styles from './App.module.css'
-import BlurText from './BlurText/BlurText'
 
 const ViewPage: FC = () => {
   const [showSecondMessage, setShowSecondMessage] = useState(false)

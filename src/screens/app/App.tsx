@@ -1,7 +1,7 @@
 import type { FC } from 'react'
-import useIsChristmas from '../../../../hooks/useIsChristmas.ts'
-import useIsDesktop from '../../../../hooks/useIsDesktop.ts'
-import Circles from '../../../Backgrounds/Circles/Circles.tsx'
+import Circles from '../../components/ui/backgrounds/Circles/Circles.tsx'
+import useIsChristmas from '../../hooks/useIsChristmas.ts'
+import useIsDesktop from '../../hooks/useIsDesktop.ts'
 // import DarkVeil from '../../../Backgrounds/DarkVeils/DarkVeils.tsx'
 import ViewPage from './ViewPage.tsx'
 

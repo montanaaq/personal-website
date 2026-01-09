@@ -4,7 +4,7 @@ import { m } from 'motion/react'
 import { type FC, useState } from 'react'
 import { toast } from 'sonner'
 
-import { useLanguage } from '../../../../hooks/useLanguage'
+import { useLanguage } from '../../hooks/useLanguage'
 
 import styles from './Header.module.css'
 
