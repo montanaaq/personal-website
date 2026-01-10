@@ -8,6 +8,9 @@
   justify-content: center;
   height: var(--footer-height);
   margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 .footer.fixed {

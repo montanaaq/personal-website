@@ -16,6 +16,7 @@ const ViewPage: FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
+      role="contentinfo"
     >
       <m.div className={styles.info_container}>
         <BlurText
