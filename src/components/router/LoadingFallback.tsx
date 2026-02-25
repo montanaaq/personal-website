@@ -22,7 +22,6 @@ const LoadingFallback: FC = () => (
           margin: '0 auto 10px'
         }}
       />
-      <p>Loading...</p>
     </div>
     <style>{`
       @keyframes spin {
