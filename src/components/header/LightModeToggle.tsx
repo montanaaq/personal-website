@@ -1,11 +1,8 @@
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import LightModeIcon from '@mui/icons-material/LightMode'
+import { MoonIcon, SunIcon } from 'lucide-react'
 import { m } from 'motion/react'
 import { type FC, useState } from 'react'
 import { toast } from 'sonner'
-
-import { useLanguage } from '../../hooks/useLanguage'
-
+import { useLanguage } from '@/shared/hooks/useLanguage'
 import styles from './Header.module.css'
 
 const LightModeToggle: FC = () => {
@@ -43,9 +40,9 @@ const LightModeToggle: FC = () => {
         title={lightMode ? t.theme.darkActivated : t.theme.lightActivated}
       >
         {!lightMode ? (
-          <LightModeIcon fontSize="small" />
+          <SunIcon strokeWidth={1.5} />
         ) : (
-          <DarkModeIcon fontSize="small" />
+          <MoonIcon strokeWidth={1.5} />
         )}
       </m.button>
     </div>

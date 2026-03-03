@@ -1,9 +1,9 @@
 import type { FC } from 'react'
-import Footer from '../../components/footer/Footer'
-import ProjectCard from '../../components/project-card/ProjectCard'
-import Circles from '../../components/ui/backgrounds/Circles/Circles'
-import { useProjectsList } from '../../data/Projects/ProjectsListLocalized'
-import { useLanguage } from '../../hooks/useLanguage'
+import Footer from '@/components/footer/Footer'
+import ProjectCard from '@/components/project-card/ProjectCard'
+import Circles from '@/components/ui/backgrounds/Circles/Circles'
+import { useProjectsList } from '@/shared/data/Projects/ProjectsListLocalized'
+import { useLanguage } from '@/shared/hooks/useLanguage'
 import styles from './Info.module.css'
 
 const Info: FC = () => {

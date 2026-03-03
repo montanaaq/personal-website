@@ -1,7 +1,7 @@
 import { motion as m } from 'motion/react'
 import type { FC } from 'react'
-import type { TProject } from '../../data/Projects/ProjectsListLocalized'
-import { useLanguage } from '../../hooks/useLanguage'
+import type { TProject } from '@/shared/data/Projects/ProjectsListLocalized'
+import { useLanguage } from '@/shared/hooks/useLanguage'
 import styles from './ProjectCard.module.css'
 
 interface ProjectCardProps {

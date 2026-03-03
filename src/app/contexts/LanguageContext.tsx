@@ -1,8 +1,10 @@
-// File: src/contexts/LanguageContext.tsx
 import type { FC } from 'react'
 import { createContext, type ReactNode, useState } from 'react'
 
-import { translations, type Translations } from '../locales/translations'
+import {
+  type Translations,
+  translations
+} from '../../shared/locales/translations'
 
 type Language = 'en' | 'ru'
 
@@ -23,14 +25,17 @@ interface LanguageProviderProps {
 export const LanguageProvider: FC<LanguageProviderProps> = ({ children }) => {
   const isLanguage = (v: unknown): v is Language => v === 'en' || v === 'ru'
 
-  const [language, setLanguageState] = useState<Language>(() => {
+  function loadLanguage(): Language {
     try {
       const saved = localStorage.getItem('language')
-      return isLanguage(saved) ? saved : 'ru'
+      if (isLanguage(saved)) return saved
     } catch {
-      return 'ru'
+      console.log('Cannot load language from localStorage')
     }
-  })
+    return 'ru'
+  }
+
+  const [language, setLanguageState] = useState<Language>(loadLanguage)
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)

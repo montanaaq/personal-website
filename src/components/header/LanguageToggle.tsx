@@ -1,8 +1,6 @@
 import { m } from 'motion/react'
 import type { FC } from 'react'
-
-import { useLanguage } from '../../hooks/useLanguage'
-
+import { useLanguage } from '@/shared/hooks/useLanguage'
 import styles from './Header.module.css'
 
 const LanguageToggle: FC = () => {

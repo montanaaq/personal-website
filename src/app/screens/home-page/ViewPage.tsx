@@ -1,8 +1,8 @@
 import { motion as m } from 'motion/react'
 import { type FC, useState } from 'react'
-import Footer from '../../components/footer/Footer'
-import BlurText from '../../components/ui/blur-text/BlurText'
-import { useLanguage } from '../../hooks/useLanguage'
+import Footer from '@/components/footer/Footer'
+import BlurText from '@/components/ui/blur-text/BlurText'
+import { useLanguage } from '@/shared/hooks/useLanguage'
 import styles from './App.module.css'
 
 const ViewPage: FC = () => {

@@ -1,4 +1,4 @@
-import { useLanguage } from '../../hooks/useLanguage'
+import { useLanguage } from '@/shared/hooks/useLanguage'
 
 export type TProject = {
   id: number

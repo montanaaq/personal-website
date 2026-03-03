@@ -63,7 +63,7 @@
 .name {
   color: var(--text-color);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
   transition: 0.2s;
   letter-spacing: 0.85px;
   white-space: nowrap;
