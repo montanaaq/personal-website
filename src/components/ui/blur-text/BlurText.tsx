@@ -1,4 +1,4 @@
-import { motion as m } from 'motion/react'
+import { motion as m, LazyMotion, domAnimation } from 'motion/react'
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router'
 
@@ -22,6 +22,10 @@ type BlurTextProps = {
   linkTo?: string | null
   links?: LinkConfig[]
 }
+
+const defaultEasing = (t: number) => t
+
+const EMPTY_LINKS: LinkConfig[] = []
 
 const buildKeyframes = (
   from: Record<string, string | number>,
@@ -47,12 +51,12 @@ const BlurText: React.FC<BlurTextProps> = ({
   direction = 'top',
   animationFrom,
   animationTo,
-  easing = (t: number) => t,
+  easing = defaultEasing,
   onAnimationComplete,
   stepDuration = 0.35,
   linkWord = null,
   linkTo = null,
-  links = []
+  links = EMPTY_LINKS
 }) => {
   const navigate = useNavigate()
 
@@ -135,7 +139,7 @@ const BlurText: React.FC<BlurTextProps> = ({
   const elementsWithIds = useMemo(
     () =>
       elements.map((segment, idx) => ({
-        id: `${segment}-${idx}-${Math.random().toString(36).substr(2, 9)}`,
+        id: `${segment}-${idx}`,
         segment,
         index: idx
       })),
@@ -143,6 +147,7 @@ const BlurText: React.FC<BlurTextProps> = ({
   )
 
   return (
+    <LazyMotion features={domAnimation}>
     <p className={className} style={{ display: 'flex', flexWrap: 'wrap' }}>
       {elementsWithIds.map(({ id, segment, index }) => {
         const linkUrl = findLinkForWord(segment)
@@ -165,10 +170,7 @@ const BlurText: React.FC<BlurTextProps> = ({
             onAnimationComplete={
               index === elements.length - 1 ? onAnimationComplete : undefined
             }
-            style={{
-              display: 'inline-block',
-              willChange: 'transform, filter, opacity'
-            }}
+            style={{ display: 'inline-block' }}
           >
             {linkUrl ? (
               <a
@@ -200,6 +202,7 @@ const BlurText: React.FC<BlurTextProps> = ({
         )
       })}
     </p>
+    </LazyMotion>
   )
 }
 

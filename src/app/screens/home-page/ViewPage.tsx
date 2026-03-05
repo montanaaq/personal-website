@@ -1,4 +1,4 @@
-import { motion as m } from 'motion/react'
+import { domAnimation, LazyMotion, m } from 'motion/react'
 import { type FC, useState } from 'react'
 import Footer from '@/components/footer/Footer'
 import BlurText from '@/components/ui/blur-text/BlurText'
@@ -11,56 +11,61 @@ const ViewPage: FC = () => {
   const { t } = useLanguage()
 
   return (
-    <m.div
-      className={styles.main}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      role="contentinfo"
-    >
-      <m.div className={styles.info_container}>
-        <BlurText
-          text={t.homepage.welcome}
-          delay={200}
-          animateBy="words"
-          direction="top"
-          onAnimationComplete={() => setShowSecondMessage(true)}
-          className={styles.blurred_text}
-        />
-
-        {showSecondMessage && (
+    <LazyMotion features={domAnimation}>
+      <m.div
+        className={styles.main}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        role="contentinfo"
+      >
+        <m.div className={styles.info_container}>
           <BlurText
-            text={t.homepage.projects}
-            delay={150}
+            text={t.homepage.welcome}
+            delay={200}
             animateBy="words"
             direction="top"
-            linkWord={t.homepage.projectsWord}
-            linkTo="/info"
-            onAnimationComplete={() => setShowThirdMessage(true)}
+            onAnimationComplete={() => setShowSecondMessage(true)}
             className={styles.blurred_text}
           />
-        )}
 
-        {showThirdMessage && (
-          <BlurText
-            text={t.homepage.links}
-            delay={150}
-            animateBy="words"
-            direction="bottom"
-            links={[
-              { word: t.homepage.linksWords[0], url: 'https://t.me/montaanaq' },
-              {
-                word: t.homepage.linksWords[1],
-                url: 'mailto:amirnurislamov123@gmail.com'
-              }
-            ]}
-            className={styles.blurred_text}
-          />
-        )}
+          {showSecondMessage && (
+            <BlurText
+              text={t.homepage.projects}
+              delay={150}
+              animateBy="words"
+              direction="top"
+              linkWord={t.homepage.projectsWord}
+              linkTo="/info"
+              onAnimationComplete={() => setShowThirdMessage(true)}
+              className={styles.blurred_text}
+            />
+          )}
+
+          {showThirdMessage && (
+            <BlurText
+              text={t.homepage.links}
+              delay={150}
+              animateBy="words"
+              direction="bottom"
+              links={[
+                {
+                  word: t.homepage.linksWords[0],
+                  url: 'https://t.me/montaanaq'
+                },
+                {
+                  word: t.homepage.linksWords[1],
+                  url: 'mailto:amirnurislamov123@gmail.com'
+                }
+              ]}
+              className={styles.blurred_text}
+            />
+          )}
+        </m.div>
+
+        <Footer />
       </m.div>
-
-      <Footer />
-    </m.div>
+    </LazyMotion>
   )
 }
 
