@@ -1,11 +1,11 @@
 import { type FC, useEffect, useState } from 'react'
 import { Link } from 'react-router'
 
-import { useLanguage } from '../../shared/hooks/useLanguage.js'
+import { useLanguage } from '../../shared/hooks/useLanguage'
 
 import styles from './Header.module.css'
-import LanguageToggle from './LanguageToggle.js'
-import LightModeToggle from './ ThemeToggle.js'
+import LanguageToggle from './LanguageToggle'
+import ThemeToggle from './ThemeToggle'
 
 const Header: FC = () => {
   const { t } = useLanguage()
@@ -33,7 +33,7 @@ const Header: FC = () => {
             <h4 className={styles.name}>{t.header.name}</h4>
           </Link>
           <div>
-            <LightModeToggle />
+            <ThemeToggle />
           </div>
         </div>
         <div>

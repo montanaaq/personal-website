@@ -6,7 +6,7 @@ import { useTheme } from '@/shared/contexts/ThemeContext'
 import { useLanguage } from '@/shared/hooks/useLanguage'
 import styles from './Header.module.css'
 
-const LightModeToggle: FC = () => {
+const ThemeToggle: FC = () => {
   const { theme, toggleTheme } = useTheme()
   const { t } = useLanguage()
 
@@ -48,4 +48,4 @@ const LightModeToggle: FC = () => {
   )
 }
 
-export default LightModeToggle
+export default ThemeToggle
