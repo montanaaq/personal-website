@@ -1,10 +1,7 @@
 import type { FC } from 'react'
 import { createContext, type ReactNode, useState } from 'react'
 
-import {
-  type Translations,
-  translations
-} from '../../shared/locales/translations'
+import { type Translations, translations } from '@/shared/locales/translations'
 
 type Language = 'en' | 'ru'
 

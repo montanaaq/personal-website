@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router'
 import Snowfall from 'react-snowfall' // only on christmas ☃️
 import { Toaster } from 'sonner'
-import { LanguageProvider } from './app/contexts/LanguageContext.tsx'
 import Router from './app/router/Router.tsx'
+import { LanguageProvider } from './shared/contexts/LanguageContext.tsx'
 
 import './index.css'
 
 import Header from './components/header/Header.tsx'
+import { ThemeProvider } from './shared/contexts/ThemeContext.tsx'
 import useIsChristmas from './shared/hooks/useIsChristmas.ts'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
@@ -31,23 +32,13 @@ const ChristmasLayout: FC = () => {
 
 root.render(
   <BrowserRouter>
-    <LanguageProvider>
-      <Header />
-      <ChristmasLayout />
-      <Router />
-      <Toaster
-        theme="system"
-        position="bottom-left"
-        closeButton
-        duration={3000}
-        toastOptions={{
-          style: {
-            minHeight: '40px',
-            padding: '12px 16px',
-            lineHeight: '1.3'
-          }
-        }}
-      />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <Header />
+        <ChristmasLayout />
+        <Router />
+        <Toaster theme="system" position="bottom-left" duration={2000} />
+      </LanguageProvider>
+    </ThemeProvider>
   </BrowserRouter>
 )

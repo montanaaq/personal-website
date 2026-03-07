@@ -85,7 +85,6 @@ body {
   }
 }
 
-/* Стили для тостов - исправляем позиционирование */
 [data-sonner-toaster] {
   position: fixed !important;
   z-index: 10002 !important;
@@ -97,7 +96,6 @@ body {
   top: auto !important;
 }
 
-/* Увеличиваем высоту тостов */
 [data-sonner-toaster] [data-sonner-toast] {
   min-height: 30px !important;
   padding: 10px 15px !important;
@@ -110,7 +108,6 @@ body {
   margin: 0 !important;
 }
 
-/* Учитываем масштабирование на больших экранах */
 @media only screen and (min-width: 1024px) {
   [data-sonner-toaster][data-position="bottom-left"] {
     bottom: 40px !important;
@@ -156,7 +153,6 @@ li a:hover {
 }
 
 @media only screen and (max-width: 1023px) {
-  /* Отключаем масштаб для мобильных и планшетов */
   body {
     transform: none;
     width: 100%;
@@ -174,6 +170,46 @@ li a:hover {
   #root {
     height: 100vh;
     overflow: hidden;
+  }
+}
+
+/* View Transition  */
+
+/* biome-ignore lint/correctness/noUnknownTypeSelector: View Transition API pseudo-elements */
+::view-transition-old(root),
+/* biome-ignore lint/correctness/noUnknownTypeSelector: View Transition API pseudo-elements */
+  ::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* biome-ignore lint/correctness/noUnknownTypeSelector: View Transition API pseudo-elements */
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+/* biome-ignore lint/correctness/noUnknownTypeSelector: View Transition API pseudo-elements */
+::view-transition-new(root) {
+  z-index: 2;
+  animation: theme-circle-expand 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes theme-circle-expand {
+  from {
+    clip-path: circle(0% at var(--vt-x, 50vw) var(--vt-y, 50vh));
+  }
+  to {
+    clip-path: circle(150% at var(--vt-x, 50vw) var(--vt-y, 50vh));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* biome-ignore lint/correctness/noUnknownTypeSelector: View Transition API pseudo-elements */
+  ::view-transition-old(root) {
+    animation: none;
+  }
+  /* biome-ignore lint/correctness/noUnknownTypeSelector: View Transition API pseudo-elements */
+  ::view-transition-new(root) {
+    animation: none;
   }
 }
 

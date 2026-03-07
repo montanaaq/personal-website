@@ -5,7 +5,7 @@ import { useLanguage } from '../../shared/hooks/useLanguage.js'
 
 import styles from './Header.module.css'
 import LanguageToggle from './LanguageToggle.js'
-import LightModeToggle from './LightModeToggle.js'
+import LightModeToggle from './ ThemeToggle.js'
 
 const Header: FC = () => {
   const { t } = useLanguage()
